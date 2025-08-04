@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity News Article</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans leading-relaxed text-gray-800">
+    <div class="max-w-3xl mx-auto px-4 py-12 bg-white shadow-lg rounded-lg my-8">
+        <!-- Article Header -->
+        <header class="mb-8 text-center">
+            <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-2 leading-tight">
+Urgent Alert for WordPress Users: Critical Theme Flaw Under Active Attack!
+            <!-- <p class="text-gray-600 text-lg">Targeting Synology NAS Devices Globally</p> -->
+            <div class="text-sm text-gray-500 mt-4">
+                <span>Published: July 31, 2025</span>
+                <!-- <span>Nikitaa Parvatham</span> -->
+
+            </div>
+        </header>
+
+        <!-- Article Content -->
+        <article class="prose prose-lg max-w-none">
+            <!-- Lead Paragraph -->
+            <p class="text-xl font-medium text-gray-700 mb-6">
+If you're running a WordPress site, especially one using the "Alone – Charity Multipurpose Non-profit WordPress Theme," listen up! Threat actors are actively exploiting a critical vulnerability (CVE-2025-5394) to hijack websites. This isn't a drill—sites are being compromised as we speak.
+
+            <!-- Key Takeaways Section -->
+            <!-- <div class="mb-8 p-4 bg-blue-50 border-l-4 border-blue-400 rounded">
+                <h2 class="text-xl font-semibold text-blue-800 mb-3">Key Takeaways</h2>
+                <ul class="list-disc list-inside text-blue-700 space-y-1">
+                    <li>Italian police, with French and Romanian authorities, dismantled the "Diskstation" ransomware gang targeting Synology NAS devices globally.</li>
+                    <li>Criminals encrypted business systems and demanded cryptocurrency ransoms from victims in various sectors.</li>
+                    <li>Authorities used forensic analysis and blockchain tracking to trace the criminal network.</li>
+                    <li>Several Romanian nationals arrested, with the main suspect (44) in detention for computer access and extortion charges.</li>
+                </ul>
+            </div> -->
+
+            <!-- Main Content Sections -->
+            <section class="mb-8">
+                <!-- <h2 class="text-2xl font-bold text-gray-900 mb-4">Ransomware Gang Exploits Synology NAS Zero-Days</h2> -->
+                <p>
+What's the Big Deal?
+This flaw, with a severe CVSS score of 9.8, allows unauthenticated attackers to upload arbitrary files to your site and achieve remote code execution. In simpler terms, a hacker can essentially take full control of your website.
+
+                
+                <blockquote class="border-l-4 border-gray-300 pl-4 py-2 my-6 text-gray-600 italic">
+The vulnerability stems from a missing capability check in a plugin installation function (alone_import_pack_install_plugin()). This means even someone without a login can remotely deploy malicious plugins via AJAX requests.
+                
+                <p>
+When Did This Start?
+Evidence suggests that exploitation of CVE-2025-5394 began as early as July 12, 2025, a full two days before the vulnerability was even publicly disclosed. This is a strong indication that these threat actors are closely monitoring code changes for newly addressed vulnerabilities, giving them a head start on attacks.
+            </section>
+
+            <section class="mb-8">
+                <!-- <h2 class="text-2xl font-bold text-gray-900 mb-4">Ransomware Ring Shut Down</h2> -->
+                <p>
+So far, security firm Wordfence has already blocked a staggering 120,900 exploit attempts targeting this flaw. The attacks are originating from a number of IP addresses, including:
+
+193.84.71.244
+
+87.120.92.24
+
+146.19.213.18
+
+185.159.158.108
+
+188.215.235.94
+
+146.70.10.25
+
+74.118.126.111
+
+62.133.47.18
+
+198.145.157.102
+
+2a0b:4141:820:752::2
+                
+                <!-- <div class="bg-gray-50 border border-gray-200 rounded p-4 my-6">
+                    <h3 class="font-semibold text-gray-800 mb-2">Operation Details:</h3>
+                    <ul class="list-disc list-inside text-gray-700 text-sm space-y-1">
+                        <li>Coordinated searches conducted in Bucharest in June 2024.</li>
+                        <li>Several suspects apprehended during active cybercrime.</li>
+                        <li>Substantial digital evidence collected.</li>
+                        <li>International cooperation through EUROPOL.</li>
+                    </ul>
+                </div> -->
+                
+                <br><p>
+How Are They Doing It?
+Attackers are leveraging this flaw to upload ZIP archives, typically named "wp-classic-editor.zip" or "background-image-cropper.zip." These seemingly innocuous files contain dangerous PHP-based backdoors that allow them to execute remote commands and upload even more malicious files. They're also deploying fully-featured file managers and backdoors capable of creating rogue administrator accounts, giving them complete control over your site.
+        <p><br>
+What Should You Do IMMEDIATELY?
+If you are using the "Alone – Charity Multipurpose Non-profit WordPress Theme", it's crucial to take action right away:
+
+<p><br>
+Update Your Theme: The vulnerability has been addressed in version 7.8.5 of the "Alone – Charity Multipurpose Non-profit WordPress Theme," released on June 16, 2025. Make sure your theme is updated to the latest version. This is your most critical step!
+<p><br>
+Check for Suspicious Admin Users: After updating, meticulously review your WordPress users. Look for any unfamiliar or newly created administrator accounts. If you find any, delete them immediately.
+<p><br>
+Scan Your Logs: Examine your server access logs for requests to /wp-admin/admin-ajax.php?action=alone_import_pack_install_plugin. The presence of these requests could indicate an attempted or successful exploit.
+Don't delay! The active exploitation of this flaw means your site could be next. Take these steps now to protect your WordPress website.
+</section>
+        </article>
+
+        <!-- Footer -->
+        <!-- <footer class="mt-12 pt-8 border-t border-gray-200 text-center text-gray-600 text-sm">
+            <p>© 2025 News Outlet. All rights reserved.</p>
+            <p class="mt-2">Source: Law Enforcement Agencies • EUROPOL</p>
+        </footer> -->
+    </div>
+</body>
+</html>

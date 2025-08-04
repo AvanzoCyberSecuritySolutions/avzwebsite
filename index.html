@@ -1,0 +1,1153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- title -->
+  <title>AVZ WEBSITE</title>
+  <meta name="description" content="website">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0, user-scalable=yes">
+  <!-- Favicon -->
+  <link rel="shortcut icon" type="image/x-icon" href="assets/img/main-images/AVZ Logo 1.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <style>
+*/
+.lock-svg {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  display: block;
+  transform: rotate(-5deg);
+  margin: 0 auto;
+}
+
+
+.lock-animation {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+}
+
+
+@media (min-width: 1200px) {
+  .lock-svg {
+    max-width: 700px;
+  }
+}
+
+@media (max-width: 990px) {
+  .lock-animation {
+    display: none !important;
+  }
+}
+
+    .logos-slider .slide img {
+  max-height: 80px; 
+  width: auto;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto; 
+}
+.corner-border-purple-btn {
+      color: black;
+    }
+
+    .corner-border-purple-btn::before,
+    .corner-border-purple-btn::after {
+      border-color: #a23da7; 
+    }
+
+    .download-btn {
+      display: inline-block;
+      padding: 12px 24px;
+      font-size: 16px;
+      font-weight: 600;
+      color: #fff;
+      background: linear-gradient(90deg, #a23da7, #8c2c8f);
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .download-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    }
+    
+    @media (max-width: 991.98px) {
+      .ep-banner-section .banner-text {
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 767.98px) {
+      .banner-title {
+        font-size: 28px !important;
+      }
+      .feature-image {
+        text-align: center;
+      }
+    }
+
+    .photoreal-lock { max-width: 370px; margin: 0 auto; display: block; }
+    .shackle-anim { transition: transform 0.7s cubic-bezier(.68,-0.55,.27,1.55); transform-origin: 160px 70px; }
+    .open .shackle-anim { transform: rotate(-35deg) translateY(-30px); }
+
+    .banner-buttons {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0;
+      margin-top: 1.5rem;
+      padding-left: 0;
+      margin-left: 0;
+    }
+    .banner-buttons .animated-button {
+      margin-top: 1rem;
+      width: 100%;
+      display: block;
+      margin-left: 0;
+    }
+    .animated-button {
+      position: static !important;
+      padding: 10px 22px;
+      font-size: 1rem;
+      min-width: unset;
+      min-height: unset;
+    }
+    .ep-banner-section {
+      padding-bottom: 5rem;
+      overflow: visible !important;
+    }
+    .banner-text {
+      text-align: left !important;
+    }
+    .full-width-banner-btn {
+      width: 100% !important;
+      position: relative;
+      left: 0;
+      right: 0;
+      transform: none;
+      margin-left: 0 !important;
+      padding-left: 0 !important;
+      border-radius: 0;
+      margin-top: 2rem;
+      margin-bottom: 0;
+      min-height: 56px;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      z-index: 1000;
+    }
+
+    .get-started-bar {
+      width: 100vw;
+      min-height: 80px;
+      background: linear-gradient(90deg, #0a1c77 60%, #1a237e 100%);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 2rem;
+      border-radius: 0;
+      margin: 0;
+      padding: 0 0 0 2vw;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      position: relative;
+      left: 50%;
+      right: 0;
+      transform: translateX(-50%);
+      z-index: 10;
+    }
+    .get-started-bar .text {
+      flex: 1 1 auto;
+      text-align: center;
+    }
+
+  </style>
+  <!-- CSS start here -->
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/fontawsome/css/fontawesome.css">
+  <link rel="stylesheet" href="assets/css/slick.css">
+  <link rel="stylesheet" href="assets/css/magnific-popup.css">
+  <link rel="stylesheet" href="assets/css/animate.min.css">
+  <link rel="stylesheet" href="assets/css/odometer.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- CSS end here -->
+</head>
+
+<body class="section-bg">
+
+  <!-- Preloader end -->
+  <!-- Header section start -->
+  <header class="ep-header-section w-100" id="sticky-header">
+    <nav class="navbar p-0 navbar-expand-xl d-none d-xl-flex">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">
+          <img src="assets/img/main-images/logo-2 1.png" alt="logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+          <ul class="navbar-nav mb-lg-0">                          
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">
+                Home
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">
+                About
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="team.html">
+                Team
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="services.html">
+                Services
+              </a>
+            </li>            
+           <li class="nav-item">
+              <a class="nav-link" href="blog.html">
+                Blog
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="news.html">
+                News
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="gallery.html">
+                Gallery
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">
+                Contact
+              </a>
+            </li>
+          </ul>          
+        </div>
+      </div>
+    </nav>
+    <!-- mobile navbar part start -->
+    <div class="mobile-menu-area d-block d-xl-none">
+      <div class="container">
+        <div class="mobile-topbar">
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="logo">
+              <a href="index.html"> <img src="assets/img/main-images/AVZ Logo 1.png" alt="logo"></a>
+            </div>
+            <div class="bars">
+              <i class="fas fa-bars"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mobile-menu-overlay"></div>
+      <div class="mobile-menu-main">
+        <div class="logo">
+          <a href="index.html"><img src="assets/img/main-images/AVZ Logo 1.png" alt="logo"></a>
+        </div>
+        <div class="close-mobile-menu"><i class="fas fa-times"></i></div>
+        <div class="menu-body">
+          <div class="menu-list">
+            <ul class="list-unstyled">
+              <li class="sub-mobile-menu">
+                <a href="index.html">Home</a>
+              </li>
+              <li class="sub-mobile-menu">
+                <a href="about.html">About</a>
+              </li>
+              <li class="sub-mobile-menu">
+                <a href="team.html">Team</a>
+              </li>
+              <li class="sub-mobile-menu">
+                <a href="services.html">Services</a>
+              </li>
+             <li class="sub-mobile-menu">
+                <a href="blog.html">Blog</a>
+              </li>
+               <li class="sub-mobile-menu">
+                <a href="news.html">News</a>
+              </li>
+
+              <li class="sub-mobile-menu">
+                <a href="gallery.html">Gallery</a>
+              </li>
+              <li class="sub-mobile-menu">
+                <a href="contact.html">Contact</a>
+              </li>
+              
+            </ul>
+          </div>
+        </div>
+        <!-- <div class="call-us p-4">
+          <a href="tel:+1234567890" class="call-us-btn d-flex align-items-center gap-3">
+            <span class="icon d-flex justify-content-center
+             align-items-center">
+              <i class="fa-solid fa-phone"></i>
+            </span>
+            <div class="info">
+              <span class="title">Need help?</span>
+              <h5 class="number">+123 456 7890</h5>
+            </div>
+          </a>
+        </div> -->
+      </div>
+    </div>
+    <!-- mobile navbar part end -->
+  </header>
+  <!-- Header section end -->
+
+  <!-- Main area start -->
+  <main>
+    <!-- Banner section start -->
+    <section class="ep-banner-section position-relative custom-wrapper-hover">
+
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="banner-text position-relative z-2">
+              <span class="mb-3">Cyber Security</span>
+              <h1 class="banner-title split-text right">
+                Start securing your business the smart way.
+Think proactive, think safe, think beyond passwords.
+
+              </h1>
+              <p>
+                From homegrown entrepreneurs to growing brands and digital-first enterprises,
+                 everyone depends on data. In today’s connected world, cyber threats are real, but preventable.
+              </p>
+              <p>We’re here to make cybersecurity simple, effective, and legally sound for every kind of business. </p>
+              <br>
+              <div class="banner-buttons d-flex flex-column align-items-start" style="margin-top:0px;">
+                <!-- <a href="getstarted.html" class="theme-btn position-relative d-inline-flex align-items-center">
+                  GetStarted
+                  <span></span>
+                </a> -->
+                <button class="corner-border-purple-btn" onclick="location.href='getstarted.html'">
+                  GetStarted
+          </button>
+              </div>
+            </div>
+          </div>
+    
+          <!-- Lock Animation Section -->
+          <div class="col-12 col-md-10 col-lg-6 mx-auto ps-xl-0">
+            <div class="banner-image custom-inner-hover reveal right">
+              <!-- Lock Animation -->
+              <div class="lock-animation text-center">
+                <svg id="lock" viewBox="0 0 320 420" class="lock-svg photoreal-lock" style="transform: rotate(-5deg);">
+                  <defs>
+                    <linearGradient id="shackleReal" x1="0" y1="0" x2="1" y2="1">
+                      <stop offset="0%" stop-color="#f8f8f8" />
+                      <stop offset="20%" stop-color="#b0b0b0" />
+                      <stop offset="50%" stop-color="#e0e0e0" />
+                      <stop offset="80%" stop-color="#b0b0b0" />
+                      <stop offset="100%" stop-color="#fafafa" />
+                    </linearGradient>
+                    <linearGradient id="bodyBlueTeal" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stop-color="#1de9b6" />
+                      <stop offset="50%" stop-color="#1976d2" />
+                      <stop offset="100%" stop-color="#004d40" />
+                    </linearGradient>
+                    <radialGradient id="bodyHighlightReal" cx="35%" cy="30%" r="60%">
+                      <stop offset="0%" stop-color="#fff" stop-opacity="0.8" />
+                      <stop offset="100%" stop-color="#fff" stop-opacity="0" />
+                    </radialGradient>
+                    <linearGradient id="glossyWhiteReal" x1="0" y1="0" x2="1" y2="1">
+                      <stop offset="0%" stop-color="#fff" stop-opacity="0.9" />
+                      <stop offset="100%" stop-color="#fff" stop-opacity="0" />
+                    </linearGradient>
+                  </defs>
+                  <g class="shackle-anim">
+                    <path d="M90,170 Q90,70 160,70 Q230,70 230,170" stroke="url(#shackleReal)" stroke-width="28" fill="none" stroke-linecap="round" />
+                  </g>
+                  <rect x="60" y="170" width="200" height="170" rx="54" ry="54" fill="url(#bodyBlueTeal)" />
+                  <ellipse cx="120" cy="210" rx="60" ry="32" fill="url(#bodyHighlightReal)" />
+                  <path d="M90,190 Q160,170 220,210 Q200,230 120,210" fill="none" stroke="url(#glossyWhiteReal)" stroke-width="16" stroke-linecap="round" opacity="0.7" />
+                  <g>
+                    <rect x="150" y="280" width="20" height="38" rx="10" fill="#1976d2" opacity="0.5" />
+                    <ellipse cx="160" cy="280" rx="8" ry="8" fill="#fff" opacity="0.4" />
+                  </g>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+
+    
+      </div>
+
+
+    
+      <span class="custom-shadown1 position-absolute rounded-pill"></span>
+      <span class="custom-shadown position-absolute rounded-pill"></span>
+    </section>
+    
+    <!-- Banner section end -->
+
+    <!-- Full-width Get Started button below banner -->
+    <!-- <a href="getstarted.html"
+       class="get-started-bar d-flex align-items-center justify-content-center">
+      <img src="assets/img/main-images/Arrow 11.png" alt="" class="arr-1 me-3" style="height: 2.2em;">
+      <span class="text" style="font-size: 2rem; font-weight: 700;">Get Started</span>
+    </a> -->
+
+    <div class="container-fluid px-0 bg-dark py-5 logo-section">
+      <span class="d-flex justify-content-center mb-4"></span>
+    <h3 class="text-center">Our companies and Network  <br>
+of Trusted Partners</h3>
+   
+   <section class="logos-slider slider mt-5">
+    
+      <div class="slide"><img src="assets/img/main-images/logos/1.png"></div>
+      <div class="slide"><img src="assets/img/main-images/logos/2.png"></div>
+      <div class="slide"><img src="assets/img/main-images/logos/3.png"></div>
+      <div class="slide"><img src="assets/img/main-images/logos/5.png"></div>
+      <div class="slide"><img src="assets/img/main-images/logos/newlogo-removebg-preview.png"></div>
+      <div class="slide"><img src="assets/img/main-images/logos/dq-removebg-preview.png"></div>
+      <div class="slide"><img src="assets/img/main-images/logos/avanzo-2.png"></div>
+   </section>
+</div>
+
+<div class="main-section position-relative">
+ 
+        <div class="highlight-box box-top">Securing a Million+ Businesses and Counting</div>
+        <div class="highlight-box box-middle">Securing Networks to Safeguard Your Data</div>
+        <h1 class="main-heading">20+ years Network </h1>
+        <h1 class="main-heading">Security Expertise</h1>
+        <div class="highlight-box box-bottom">Trusted with the Protection of a Billion+ Patient Records</div>
+    
+</div>
+ 
+
+    <!-- Feature section start -->
+    <section class="ep-features-section pt-120 position-relative">
+      <span class="custom-shadown1 position-absolute rounded-pill"></span>
+<span class="custom-shadown position-absolute rounded-pill"></span>
+      <div class="container">
+        <div class="row">
+           <div class="col-lg-6">
+            <div class="feature-image position-relative">
+              <div class="img-one overflow-hidden rounded-20 position-relative reveal left">
+                <img src="assets/img/main-images/Avanzo Cyber Security Solutions LLC 1.png" alt="about-img"
+                  class="img-fluid w-100 rounded-20">
+              </div>
+              <!-- <a href="assets/img/pdf/4 Avanzo Solutions.pdf" target="_blank" class="download-btn mt-4">Download brochure</a> -->
+            </div>
+          </div>
+          <div class="col-lg-6 d-flex align-items-start pt-5">
+            <div class="feature-text position-relative ">
+              <div class="section-title-block">
+                <p class="highlight-word mb-4">Introducing <span>CyberSol</span></p>
+              <h1 class="banner-title mb-4 split-text right">Your Trusted Shield in the Digital World</h1>
+              <p class="description">At CyberSol, we don’t just secure systems we protect reputations. Our tailored solutions include in-depth audits, strategic cybersecurity
+                 planning, and full-scale implementation designed around your business goals.</p>
+              </div>
+              <b class="position-absolute">01</b>
+            </div>
+            
+          </div>
+         
+        </div>
+        <div class="row">
+           
+          <div class="col-lg-6 d-flex align-items-end pt-5">
+            <div class="feature-text position-relative feature-text2">
+              <div class="section-title-block">
+                <p class="highlight-word mb-4">We are best at our  <span>Services</span></p>
+              <h1 class="banner-title mb-4 split-text right">Client-Centric Since 2010 </h1>
+              <p>AVANZO stands for commitment, clarity, and confidence. We align with your 
+                objectives to deliver cybersecurity that works for your people, your operations, and your future.</p>
+              </div>
+              <b class="position-absolute">02</b>
+            </div>
+            
+          </div>
+         <div class="col-lg-6">
+            <div class="feature-image position-relative">
+              <span class="custom-shadown position-absolute rounded-pill"></span>
+              <div class="img-one overflow-hidden rounded-20 position-relative">
+                <img src="assets/img/main-images/IMG-20250626-WA0013.png" alt="about-img"
+                  class="img-fluid w-100 rounded-20 purple-filter" id="globe">                  
+              </div>
+              <span class="custom-shadown3 position-absolute rounded-pill"></span>
+            </div>
+          </div>
+          
+
+
+          
+
+        </div>
+
+        <div class="row mt-0">
+          <div class="col-lg-4">
+            <div class="service-item rounded-20">
+              <span class="d-block w-100 view-more-btn" data-title="Data Protection Officer"
+               data-description="Protect your data from any threat actors with proper DPO support and awareness.">
+                
+                <div class="text">
+                  <h4 class="service-title">Data Protection officer</h4>
+                  <p>Protect your data with expert DPO oversight, ensuring 
+                    regulatory compliance, breach prevention, and a culture of privacy-first awareness.</p>
+                </div>
+                                <span>View More <img class="ms-3" src="assets/img/main-images/Arrow 18.png" alt=""></span>
+
+              </span>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="service-item rounded-20">
+              <!-- <a href="service-details.html" class="d-block w-100"> -->
+              <span class="d-block w-100 view-more-btn" data-title="Formulating Security Policies" 
+              data-description="Secure your organization’s data using well-defined security policies and compliance practices.">
+                
+                <div class="text">
+                  <h4 class="service-title">Building Comprehensive Security Standards
+Policies</h4>
+                  <p>Establish robust security frameworks that safeguard data
+                     with precise policies and adherence to compliance standards.</p>
+                </div>
+                                <span>View More <img class="ms-3" src="assets/img/main-images/Arrow 18.png" alt=""></span>
+
+              </span>
+            </div>
+          </div>
+          <div class="col-lg-4 position-relative">
+            <span class="custom-shadown position-absolute rounded-pill"></span>
+            <div class="service-item rounded-20">
+              <span class="d-block w-100 view-more-btn" data-title="IPR in Cyberspace"
+               data-description="Ensure your digital assets and intellectual property are safeguarded in the online environment.">
+                
+                <div class="text">
+                  <h4 class="service-title">Protecting IP in the Digital Realm</h4>
+                  <p>Protect your intellectual assets and online creations through robust cyber IP safeguards.</p>
+                </div>
+                                <span>View More <img class="ms-3" src="assets/img/main-images/Arrow 18.png" alt=""></span>
+
+              </span>
+            </div>
+            <span class="custom-shadown3 position-absolute rounded-pill"></span>
+          </div>
+          <div class="col-lg-4">
+            <div class="service-item rounded-20">
+              <span class="d-block w-100 view-more-btn" data-title="Cyber Forensic" 
+              data-description="Analyze and recover data from digital devices to investigate cyber crimes and security incidents.">
+                
+                <div class="text">
+                  <h4 class="service-title">Digital Forensics</h4>
+                  <p>Uncover and restore digital evidence to trace cyber threats and investigate security breaches.</p>
+                </div>
+                                <span>View More <img class="ms-3" src="assets/img/main-images/Arrow 18.png" alt=""></span>
+
+              </span>
+            </div>
+          </div>
+              <div class="col-lg-4">
+            <div class="service-item rounded-20">
+              <span class="d-block w-100 view-more-btn" data-title="Cybersecurity Consulting"
+               data-description="Receive expert advice to strengthen your digital infrastructure and prevent attacks.">
+                
+                <div class="text">
+                  <h4 class="service-title">Digital Evidence Analysis</h4>
+                  <p>Identify and retrieve digital evidence to investigate cyber incidents and support threat attribution.</p>
+                </div>
+                                <span>View More <img class="ms-3" src="assets/img/main-images/Arrow 18.png" alt=""></span>
+
+              </span>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="service-item rounded-20">
+              <span class="d-block w-100 view-more-btn" data-title="Penetration Testing"
+               data-description="Simulate cyber attacks to identify and patch security weaknesses in your system.">
+                
+                <div class="text">
+                  <h4 class="service-title">Security Assessment </h4>
+                  <p>Emulate real-world cyber attacks to uncover and fix vulnerabilities before malicious actors exploit them.</p>
+                </div>
+                                <span>View More <img class="ms-3" src="assets/img/main-images/Arrow 18.png" alt=""></span>
+
+              </span>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="service-item rounded-20">
+              <span class="d-block w-100 view-more-btn" data-title="Vulnerability Assessment"
+               data-description="Systematic review of security weaknesses to minimize risks before exploitation.">
+                
+                <div class="text">
+                  <h4 class="service-title">Risk Surface Mapping</h4>
+                  <p>Identify and evaluate security flaws across your systems to reduce exposure before attackers strike.</p>
+                </div>
+                                <span>View More <img class="ms-3" src="assets/img/main-images/Arrow 18.png" alt=""></span>
+
+              </span>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="service-item rounded-20">
+              <span class="d-block w-100 view-more-btn" data-title="SIEM" 
+              data-description="Monitor and manage security events and incidents across your IT environment.">
+                
+                <div class="text">
+                  <h4 class="service-title">Security Intelligence Hub</h4>
+                  <p>Detect and manage threats in real time by collecting and analyzing security events across your network.</p>
+                </div>
+                                <span>View More <img class="ms-3" src="assets/img/main-images/Arrow 18.png" alt=""></span>
+
+              </span>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="service-item rounded-20">
+              <span class="d-block w-100 view-more-btn" data-title="Incident Response & Threat Hunting"
+               data-description="Quickly detect and respond to threats with active threat hunting and mitigation strategies.">
+                
+                <div class="text">
+                  <h4 class="service-title">Threat Detection & Response</h4>
+                  <p>Actively identify, investigate, and neutralize cyber threats with swift incident handling and expert-led threat hunting.</p>
+                </div>
+                                <span>View More <img class="ms-3" src="assets/img/main-images/Arrow 18.png" alt=""></span>
+
+              </span>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="service-item rounded-20">
+              <span class="d-block w-100 view-more-btn" data-title="Cloud Security & Compliance" 
+              data-description="Protect cloud-based assets while meeting compliance standards and best practices.">
+                
+                <div class="text">
+                  <h4 class="service-title">Secure Cloud Governance</h4>
+                  <p>Safeguard your cloud infrastructure while aligning with regulatory frameworks and industry security benchmarks.</p>
+                </div>
+                                <span>View More <img class="ms-3" src="assets/img/main-images/Arrow 18.png" alt=""></span>
+
+              </span>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="service-item rounded-20">
+              <span class="d-block w-100 view-more-btn" data-title="Compliance & Regulations" 
+              data-description="Stay updated with evolving laws and frameworks for secure digital practices.">
+                
+                <div class="text">
+                  <h4 class="service-title">Digital Compliance Mastery</h4>
+                  <p>Navigate the dynamic landscape of laws and standards to ensure secure and lawful digital operations.</p>
+                </div>
+                                <span>View More <img class="ms-3" src="assets/img/main-images/Arrow 18.png" alt=""></span>
+
+              </span>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="service-item rounded-20">
+              <span class="d-block w-100 view-more-btn" data-title="Certifications"
+               data-description="Get internationally recognized certifications for individuals and organizations in cybersecurity.">
+                
+                <div class="text">
+                  <h4 class="service-title">Global Cyber Certifications</h4>
+                  <p>Earn globally recognized credentials in cybersecurity for professionals and organizations alike.</p>
+                </div>
+                                <span>View More <img class="ms-3" src="assets/img/main-images/Arrow 18.png" alt=""></span>
+
+              </span>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="service-item rounded-20">
+              <span class="d-block w-100 view-more-btn" data-title="Managed Security Service"
+               data-description="Outsource your security operations to experts for 24/7 protection.">
+                
+                <div class="text">
+                  <h4 class="service-title">Expert-Led Security Management</h4>
+                  <p>Ensure round-the-clock protection with fully managed security operations handled by industry professionals.</p>
+                </div>
+                                <span>View More <img class="ms-3" src="assets/img/main-images/Arrow 18.png" alt=""></span>
+
+              </span>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="service-item rounded-20">
+              <span class="d-block w-100 view-more-btn" data-title="SOC Services" 
+              data-description="Monitor, detect, and respond to cyber threats through a Security Operations Center.">
+                
+                <div class="text">
+                  <h4 class="service-title">24x7 SOC Monitoring</h4>
+                  <p>Continuously monitor and mitigate threats with advanced detection capabilities from a professional SOC team.</p>
+                </div>
+                                <span>View More <img class="ms-3" src="assets/img/main-images/Arrow 18.png" alt=""></span>
+
+              </span>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="service-item rounded-20">
+              <span class="d-block w-100 view-more-btn" data-title="Corporate / Govt Training" 
+              data-description="Train staff and government bodies in cyber safety, auditing, and secure practices.">
+                
+                <div class="text">
+                  <h4 class="service-title">Workforce Cyber Readiness</h4>
+                  <p>Equip corporate teams and government agencies with skills in cyber hygiene, compliance, and risk mitigation.</p>
+                </div>
+                                <span>View More <img class="ms-3" src="assets/img/main-images/Arrow 18.png" alt=""></span>
+
+              </span>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="service-item rounded-20">
+              <span class="d-block w-100 view-more-btn" data-title="Legal Consulting" 
+              data-description="Get legal guidance on cybersecurity law, digital rights, and data protection.">
+                
+                <div class="text">
+                  <h4 class="service-title">Cyber Law Advisory</h4>
+                  <p>Receive expert legal support on digital rights, data protection, and cybersecurity compliance.</p>
+                </div>
+                                <span>View More <img class="ms-3" src="assets/img/main-images/Arrow 18.png" alt=""></span>
+
+              </span>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="service-item rounded-20">
+              <span class="d-block w-100 view-more-btn" data-title="Cyber Legal Audit"
+               data-description="Ensure your cyber infrastructure meets legal and industry-standard requirements.">
+                
+                <div class="text">
+                  <h4 class="service-title">Regulatory Cyber Audit</h4>
+                  <p>Verify your organization’s adherence to data protection laws and industry-specific cyber requirements. </p>
+                </div>
+                                <span>View More <img class="ms-3" src="assets/img/main-images/Arrow 18.png" alt=""></span>
+
+              </span>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="service-item rounded-20">
+              <span class="d-block w-100 view-more-btn" data-title="Infosec Audit"
+               data-description="Conduct in-depth audits to evaluate the effectiveness of your information security framework.">
+                
+                <div class="text">
+                  <h4 class="service-title">Information Security Audit</h4>
+                  <p>Perform comprehensive audits to assess and strengthen your organization’s security posture and risk controls.</p>
+                </div>
+                                <span>View More <img class="ms-3" src="assets/img/main-images/Arrow 18.png" alt=""></span>
+
+              </span>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="service-item rounded-20">
+              <span class="d-block w-100 view-more-btn" data-title="Cyber Investigation"
+               data-description="Uncover and trace digital evidence to identify threat actors and support legal action.">
+                
+                <div class="text">
+                  <h4 class="service-title">Cyber Threat Investigation</h4>
+                  <p>Detect, analyze, and document cyber incidents to support law enforcement and incident resolution.</p>
+                </div>
+                                <span>View More <img class="ms-3" src="assets/img/main-images/Arrow 18.png" alt=""></span>
+
+              </span>
+            </div>
+          </div><div class="col-lg-6">
+            <div class="service-item rounded-20">
+              <span class="d-block w-100 view-more-btn" data-title="Arbitration"
+               data-description="Resolve cyber-related disputes efficiently through digital arbitration frameworks.">
+                
+                <div class="text">
+                  <h4 class="service-title">Digital Dispute Resolution</h4>
+                  <p>Resolve cyber-related conflicts through secure, tech-enabled arbitration processes and legal standards.</p>
+                </div>
+                <span>View More <img class="ms-3" src="assets/img/main-images/Arrow 18.png" alt=""></span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <span class="custom-shadown1 position-absolute rounded-pill"></span>
+<span class="custom-shadown position-absolute rounded-pill"></span>
+    </section>
+    <!-- Feature section end -->
+
+    
+  
+    <!-- Counter section start -->
+    <section class="ep-counter-section pt-120 container-fluid px-0 bg-dark py-5 position-relative">
+      
+      <div class="container">
+        
+        <div class="row g-4">
+          
+          <div class="col-lg-5  logo-section">
+            <span class="d-flex justify-content-start mb-4"></span>
+    <h3 class="text-start">Trusted by Industry <br>Leaders </h3>
+<p  class="mt-3 text-white">We collaborate with forward-thinking companies who trust us
+   to protect their data and support growth in a fast-changing tech world.
+              </p>
+          </div>
+          <div class="col-lg-7">
+            <div class="counter-text">
+              
+              <div class="counter-wrapper">
+                <div class="row g-4">
+                  <div class="col-sm-6">
+                    <div class="counter-item text-center d-flex">
+                      <div class="number ">
+                        <span class="odometer " data-count="20"></span>+
+                      </div>
+                      <span class="short-info text-white ms-2 text-start">years of <br>
+Experience</span>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="counter-item text-center d-flex">
+                      <div class="number">
+                        <span class="odometer" data-count="2"></span>+
+                      </div>
+                      <span class="short-info text-white ms-2 text-start">presence in <br>
+countries</span>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="counter-item text-center d-flex">
+                      <div class="number">
+                        <span class="odometer" data-count="200"></span>m
+                      </div>
+                      <span class="short-info text-white ms-2 text-start">trusted <br>
+customers</span>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="counter-item text-center d-flex">
+                      <div class="number">
+                        <span class="">24*7</span>
+                      </div>
+                      <span class="short-info text-white ms-2 text-start">Availability</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+    </section>
+    <!-- Counter section end -->
+    
+
+    <section class=" pt-120 position-relative">
+      
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 d-flex align-items-end pt-5">
+        <div class="feature-text position-relative feature-text2">
+          <span class="custom-shadown1 position-absolute rounded-pill"></span>
+          
+          <div class="section-title-block">
+            <p class="highlight-word mb-4">Our Core <span>Force</span></p>
+            <h1 class="banner-title mb-4 split-text right">A team that delivers unmatched expertise and dedicated support at every step.</h1>
+          </div>
+          <b class="position-absolute">03</b>
+        </div>
+      </div>
+    </div>
+<div class="container">
+  <div class="row">
+
+    <!-- Yasser -->
+    <div class="col-md-3 mb-4 text-center">
+      <div class="profile-image-container">
+        <img src="assets/img/main-images/yasser 1.png" alt="Dr. C P Abdulla Yasser" class="img-fluid">
+      </div>
+      <h5 class="mt-3 mb-1">Dr. C P Abdulla Yasser</h5>
+      <p class="text-muted mb-0">Managing Director</p>
+    </div>
+
+    <!-- Ajith -->
+    <div class="col-md-3 mb-4 text-center">
+      <div class="profile-image-container">
+        <img src="assets/img/main-images/ajith 1.png" alt="Ajith Kumar Parakkat" class="img-fluid">
+      </div>
+      <h5 class="mt-3 mb-1">Ajith Kumar Parakkad</h5>
+      <p class="text-muted mb-0">Chief Executive Officer</p>
+    </div>
+
+    <!-- Dhanya -->
+    <div class="col-md-3 mb-4 text-center">
+      <div class="profile-image-container">
+        <img src="assets/img/main-images/dhanya 1.png" alt="Pattathil Dhanya Menon" class="img-fluid">
+      </div>
+      <h5 class="mt-3 mb-1">Dr Pattathil Dhanya Menon</h5>
+      <p class="text-muted mb-0">Chief Technology Officer</p>
+    </div>
+
+    <!-- Pranav -->
+    <div class="col-md-3 mb-4 text-center">
+      <div class="profile-image-container">
+        <img src="assets/img/main-images/pranav 1.png" alt="Pranav Menon" class="img-fluid">
+      </div>
+      <h5 class="mt-3 mb-1">Pattathil Pranav Menon</h5>
+      <p class="text-muted mb-0">Data Protection Officer</p>
+    </div>
+
+  </div>
+</div>
+  
+</section>
+
+
+
+<section class="connect-section py-5 text-center position-relative">
+ 
+<span class="custom-shadown4 position-absolute rounded-pill"></span>
+  <div class="container">
+    <hr class="neon-line mx-auto mb-4" />
+   <p class="mb-3 fw-bold fs-4">Let's connect</p>
+
+   <div class="mx-auto" style="max-width: 700px;">
+  <h1 class="banner-title mb-4 split-text">Now it's time for you to join us for securing your business</h1>
+
+  <p class="lead mb-2">
+    Join us to keep yourself updated with our tips and strategies to secure your organisation from threats
+  </p>
+</div>
+
+  </div>
+  
+</section>
+
+
+<!-- Blog section end -->
+
+
+<footer class="footer-section py-5 position-relative">
+  <div class="container-fluid px-3">
+    <div class="row align-items-center">
+
+      <!-- Left column -->
+      <div class="col-md-6 mb-4 mb-md-0">
+        <h1 class="banner-title mb-4 split-text">Subscribe to our news & blogs</h1>
+        <p>
+          <span class="text-violet fw-bold">Subscribe</span> 
+          <span class="d-inline-flex align-items-center ms-3">
+            
+            <img class="ms-2" src="assets/img/main-images/Arrow 18.png" alt="Arrow" style="height:16px;">
+          </span>
+        </p>
+      </div>
+      <!-- Right column -->
+      <div class="col-md-6">
+        <div class="purple-gradient-box p-4 rounded text-white">
+          <h1 class="">Get started with us?</h1>
+          <button class="corner-border-white-btn" onclick="location.href='contact.html'" >
+            Get Started
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+<footer class="footer-section py-5 bg-light position-relative">
+ 
+  <div class="container">
+    <div class="row align-items-start">
+      
+      <!-- Combined Logo and Address Column -->
+<div class="col-md-6 d-flex align-items-center mb-4 mb-md-0">
+
+  <!-- 1. Logo Link -->
+  <a class="navbar-brand me-3" href="index.html">
+    <img src="assets/img/main-images/AVZ Logo 1.png" alt="logo" class="img-fluid" style="max-height: 200px;">
+  </a>
+
+  <!-- 2. Address Info -->
+  <div>
+    <small class="d-block text-muted" style="font-size: 0.80rem;">
+      <span class="fw-bold d-block mb-1">A V Z cyber security solutions L. L. C</span>
+      Office No: 04, Workspace Downtown Business Centre, Next to Dubai mall metro exit 2, Al-Wasl Building, Sheik Zayed Road, Dubai, UAE.
+    </small>
+  </div>
+
+</div>
+
+
+      <!-- 3. Navigation links -->
+      <div class="col-md-2 mb-4 mb-md-0">
+        <small class="d-block mb-2 text-muted" style="font-size: 0.85rem;">
+          <a href="#" class="text-decoration-none text-dark d-block mb-1">Home</a>
+          <a href="#" class="text-decoration-none text-dark d-block mb-1">Services</a>
+          <a href="#" class="text-decoration-none text-dark d-block">Contact</a>
+        </small>
+      </div>
+
+      <!-- 4. About + Blogs + Newsletter -->
+      <div class="col-md-4">
+        <small class="d-block mb-2 text-muted" style="font-size: 0.85rem;">
+          <a href="#" class="text-decoration-none text-dark d-block mb-1">About</a>
+          <a href="#" class="text-decoration-none text-dark d-block mb-3">Blogs & News</a>
+
+          <input type="text" class="form-control form-control-sm mb-2" placeholder="newsletters" style="background-color: #f5f5f5; font-size: 0.85rem;">
+
+          <div>
+            <span class="text-violet fw-bold" style="font-size: 0.9rem;">Subscribe</span>
+            <span class="d-inline-flex align-items-center ms-3">
+              <img class="ms-2" src="assets/img/main-images/Arrow 18.png" alt="Arrow" style="height:16px;">
+            </span>
+          </div>
+        </small>
+      </div>
+
+    </div>
+  </div>
+  
+</footer>
+
+
+  </main>
+  <!-- Main area end -->
+  <!-- Back to top button start -->
+  <button class="scroll-to-top position-fixed">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+  <!-- Back to top button end -->
+ <!-- Modal -->
+<div class="modal fade" id="descriptionModal" tabindex="-1" aria-labelledby="modalTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content rounded-4 shadow-lg">
+      <div class="modal-header border-0">
+        <h5 class="modal-title fw-bold" id="modalTitle"></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body fs-5" id="modalDescription">
+        <!-- Dynamic content goes here -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.querySelectorAll('.view-more-btn').forEach(function(button) {
+    button.addEventListener('click', function() {
+      const title = this.getAttribute('data-title');
+      const description = this.getAttribute('data-description');
+      
+      document.getElementById('modalTitle').textContent = title;
+      document.getElementById('modalDescription').textContent = description;
+
+      const modal = new bootstrap.Modal(document.getElementById('descriptionModal'));
+      modal.show();
+    });
+  });
+</script>
+
+  <!-- JS start here -->
+  <script src="assets/js/vendor/jquery-3.6.0.min.js"></script>
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/gsap.js"></script>
+  <script src="assets/js/gsap-scroll-trigger.js"></script>
+  <script src="assets/js/gsap-split-text.js"></script>
+  <script src="assets/js/jquery.appear.js"></script>
+  <script src="assets/js/jquery.odometer.min.js"></script>
+  <script src="assets/js/jquery.magnific-popup.min.js"></script>
+  <script src="assets/js/ajax-form.js"></script>
+  <script src="assets/js/slick.min.js"></script>
+  <script src="assets/js/script.js"></script>
+  <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <!-- JS end here -->
+
+  <script>
+    $('.logos-slider').slick({
+slidesToShow: 4,
+slidesToScroll: 1,
+autoplay: true,
+autoplaySpeed: 1500,
+arrows: false,
+dots: false,
+pauseOnHover: false,
+responsive: [{
+breakpoint: 768,
+settings: {
+slidesToShow: 3
+}
+}, {
+breakpoint: 520,
+settings: {
+slidesToShow: 2
+}
+}]
+});
+  </script>
+  
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const lock = document.getElementById("lock");
+    const lockContainer = lock.closest('.lock-animation');
+
+
+    lock.classList.remove('open');
+
+ 
+    lockContainer.addEventListener('mouseenter', function() {
+      lock.classList.add('open');
+    });
+    lockContainer.addEventListener('mouseleave', function() {
+      lock.classList.remove('open');
+    });
+  });
+</script>
+
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const image = document.getElementById("globe");
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          image.classList.remove("flip-animation"); 
+          void image.offsetWidth; 
+          image.classList.add("flip-animation");
+        }
+      });
+    }, {
+      threshold: 0.2
+    });
+
+    observer.observe(image);
+  });
+</script>
+
+
+</body>
+</html>
