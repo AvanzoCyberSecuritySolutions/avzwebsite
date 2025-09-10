@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
+  <!-- Required meta tags -->
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <!-- title -->
@@ -11,10 +11,10 @@
     content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0, user-scalable=yes">
   <!-- Favicon -->
   <link rel="shortcut icon" type="image/x-icon" href="assets/img/main-images/AVZ Logo 1.png">
- 
+  <!-- Place favicon.ico in the root directory -->
+
   <style>
 */
-
 .lock-svg {
   width: 100%;
   max-width: 600px;
@@ -23,6 +23,7 @@
   transform: rotate(-5deg);
   margin: 0 auto;
 }
+
 
 .lock-animation {
   width: 100%;
@@ -34,21 +35,6 @@
   padding: 20px 0;
 }
 
-@media (min-width: 1400px) {
-  .lock-svg {
-    max-width: 800px;
-  }
-  .container {
-    max-width: 1320px;
-  }
-  .banner-title {
-    font-size: 48px !important;
-  }
-  .main-heading {
-    font-size: 52px;
-  }
-}
-
 
 @media (min-width: 1200px) {
   .lock-svg {
@@ -56,68 +42,19 @@
   }
 }
 
-
-@media (max-width: 1199px) {
-  .lock-svg {
-    max-width: 500px;
-  }
-}
-
 @media (max-width: 990px) {
-  .lock-svg {
-    max-width: 400px;
-  }
   .lock-animation {
-    padding: 15px 0;
-  }
-}
-
-
-@media (max-width: 767px) {
-  .lock-svg {
-    max-width: 300px;
-  }
-  .lock-animation {
-    padding: 10px 0;
-  }
-}
-
-@media (max-width: 575px) {
-  .lock-svg {
-    max-width: 250px;
+    display: none !important;
   }
 }
 
     .logos-slider .slide img {
-      max-height: 80px; 
-      width: auto;
-      object-fit: contain;
-      display: block;
-      margin: 0 auto; 
-    }
-
-    @media (max-width: 767px) {
-      .logos-slider .slide img {
-        max-height: 60px;
-      }
-      .logo-section h3 {
-        font-size: 18px;
-        line-height: 1.4;
-      }
-    }
-
-    @media (max-width: 575px) {
-      .logos-slider .slide img {
-        max-height: 50px;
-      }
-      .logo-section h3 {
-        font-size: 16px;
-        text-align: center;
-      }
-      .logo-section {
-        padding: 40px 0;
-      }
-    }
+  max-height: 80px; 
+  width: auto;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto; 
+}
 .corner-border-purple-btn {
       color: black;
     }
@@ -148,58 +85,18 @@
       box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
     }
     
-
-    @media (max-width: 1199px) {
-      .banner-title {
-        font-size: 36px !important;
-        line-height: 1.2;
-      }
-      .banner-text p {
-        font-size: 16px;
-      }
-    }
-
     @media (max-width: 991.98px) {
       .ep-banner-section .banner-text {
         text-align: center;
-        padding: 20px 0;
-      }
-      .banner-title {
-        font-size: 32px !important;
       }
     }
 
     @media (max-width: 767.98px) {
       .banner-title {
         font-size: 28px !important;
-        margin-bottom: 15px;
-      }
-      .banner-text p {
-        font-size: 14px;
-        line-height: 1.5;
-        margin-bottom: 10px;
       }
       .feature-image {
         text-align: center;
-      }
-      .ep-banner-section {
-        padding-bottom: 3rem;
-      }
-    }
-
-    @media (max-width: 575px) {
-      .banner-title {
-        font-size: 24px !important;
-        line-height: 1.3;
-      }
-      .banner-text {
-        padding: 15px;
-      }
-      .corner-border-purple-btn {
-        width: 100%;
-        padding: 15px;
-        font-size: 16px;
-        margin-top: 20px;
       }
     }
 
@@ -272,287 +169,9 @@
       transform: translateX(-50%);
       z-index: 10;
     }
-      .get-started-bar .text {
+    .get-started-bar .text {
       flex: 1 1 auto;
       text-align: center;
-    }
-
- 
-    .main-section {
-      padding: 60px 20px;
-      text-align: center;
-    }
-
-    .highlight-box {
-      padding: 15px;
-      margin: 10px 0;
-      font-size: 16px;
-      border-radius: 8px;
-    }
-
-    .main-heading {
-      font-size: 48px;
-      line-height: 1.2;
-      margin: 10px 0;
-    }
-
-    @media (max-width: 1199px) {
-      .main-heading {
-        font-size: 40px;
-      }
-      .highlight-box {
-        font-size: 14px;
-        padding: 12px;
-      }
-    }
-
-    @media (max-width: 767px) {
-      .main-section {
-        padding: 40px 15px;
-      }
-      .main-heading {
-        font-size: 28px;
-        line-height: 1.3;
-      }
-      .highlight-box {
-        font-size: 12px;
-        padding: 10px;
-        margin: 8px 0;
-      }
-    }
-
-    @media (max-width: 575px) {
-      .main-section {
-        padding: 30px 10px;
-      }
-      .main-heading {
-        font-size: 24px;
-      }
-      .highlight-box {
-        font-size: 11px;
-        padding: 8px;
-      }
-    }
-
-    /* Services grid responsive improvements */
-    @media (max-width: 1199px) {
-      .service-item {
-        margin-bottom: 20px;
-      }
-      .service-item .text h4 {
-        font-size: 18px;
-        line-height: 1.3;
-      }
-      .service-item .text p {
-        font-size: 14px;
-      }
-    }
-
-    @media (max-width: 767px) {
-      .service-item {
-        padding: 25px 20px;
-        margin-bottom: 15px;
-      }
-      .service-item .text h4 {
-        font-size: 16px;
-        margin-bottom: 10px;
-      }
-      .service-item .text p {
-        font-size: 13px;
-        line-height: 1.4;
-      }
-    }
-
-    @media (max-width: 575px) {
-      .service-item {
-        padding: 20px 15px;
-      }
-      .service-item .text h4 {
-        font-size: 15px;
-      }
-      .service-item .text p {
-        font-size: 12px;
-      }
-    }
-
-    /* Team section responsive styles */
-    .profile-image-container {
-      margin-bottom: 15px;
-    }
-
-    @media (max-width: 767px) {
-      .profile-image-container img {
-        max-width: 150px;
-        height: auto;
-      }
-      .col-md-3 h5 {
-        font-size: 16px;
-        margin-bottom: 5px;
-      }
-      .col-md-3 p {
-        font-size: 12px;
-      }
-    }
-
-    @media (max-width: 575px) {
-      .profile-image-container img {
-        max-width: 120px;
-      }
-      .col-md-3 h5 {
-        font-size: 14px;
-      }
-      .col-md-3 p {
-        font-size: 11px;
-      }
-      .col-md-3 {
-        margin-bottom: 30px;
-      }
-    }
-
-    /* Footer responsive improvements */
-    @media (max-width: 767px) {
-      .footer-section .banner-title {
-        font-size: 24px !important;
-        line-height: 1.3;
-      }
-      .purple-gradient-box h1 {
-        font-size: 20px;
-        margin-bottom: 15px;
-      }
-      .corner-border-white-btn {
-        width: 100%;
-        padding: 12px;
-        font-size: 14px;
-      }
-    }
-
-    @media (max-width: 575px) {
-      .footer-section .col-md-6 {
-        margin-bottom: 20px;
-      }
-      .footer-section .banner-title {
-        font-size: 20px !important;
-      }
-      .purple-gradient-box {
-        padding: 20px !important;
-      }
-      .purple-gradient-box h1 {
-        font-size: 18px;
-      }
-    }
-
-    /* Counter section responsive improvements */
-    @media (max-width: 767px) {
-      .counter-item {
-        margin-bottom: 20px;
-      }
-      .counter-item .number {
-        font-size: 32px !important;
-      }
-      .counter-item .short-info {
-        font-size: 12px;
-      }
-    }
-
-    @media (max-width: 575px) {
-      .counter-item .number {
-        font-size: 28px !important;
-      }
-      .counter-item .short-info {
-        font-size: 11px;
-      }
-    }
-
-    /* Product section responsive styles */
-    @media (max-width: 767px) {
-      .download-btn {
-        padding: 10px 15px;
-        font-size: 14px;
-        line-height: 1.3;
-      }
-      .feature-text .banner-title {
-        font-size: 24px !important;
-      }
-      .feature-text .description {
-        font-size: 14px;
-      }
-    }
-
-    @media (max-width: 575px) {
-      .download-btn {
-        padding: 8px 12px;
-        font-size: 12px;
-      }
-      .d-flex.gap-3 {
-        flex-direction: column;
-        gap: 15px !important;
-      }
-      .download-btn.flex-1 {
-        width: 100%;
-      }
-    }
-
-    /* Very small screens (320px and below) */
-    @media (max-width: 320px) {
-      .container {
-        padding-left: 5px;
-        padding-right: 5px;
-      }
-      .banner-title {
-        font-size: 20px !important;
-        line-height: 1.2;
-      }
-      .banner-text p {
-        font-size: 12px;
-        line-height: 1.4;
-      }
-      .lock-svg {
-        max-width: 200px;
-      }
-      .main-heading {
-        font-size: 20px;
-      }
-      .highlight-box {
-        font-size: 10px;
-        padding: 6px;
-      }
-      .service-item {
-        padding: 15px 10px;
-      }
-      .service-item .text h4 {
-        font-size: 14px;
-      }
-      .service-item .text p {
-        font-size: 11px;
-      }
-      .profile-image-container img {
-        max-width: 100px;
-      }
-      .col-md-3 h5 {
-        font-size: 12px;
-      }
-      .col-md-3 p {
-        font-size: 10px;
-      }
-      .logos-slider .slide img {
-        max-height: 40px;
-      }
-      .download-btn {
-        padding: 6px 10px;
-        font-size: 11px;
-      }
-      .counter-item .number {
-        font-size: 24px !important;
-      }
-      .counter-item .short-info {
-        font-size: 10px;
-      }
-      .footer-section .banner-title {
-        font-size: 18px !important;
-      }
-      .purple-gradient-box h1 {
-        font-size: 16px;
-      }
     }
 
   </style>
@@ -652,10 +271,10 @@
         <div class="mobile-topbar">
           <div class="d-flex justify-content-between align-items-center">
             <div class="logo">
-              <a href="index.html"> <img src="assets/img/main-images/AVZ Logo 1.png" alt="logo" style="max-height: 50px; width: auto;"></a>
+              <a href="index.html"> <img src="assets/img/main-images/AVZ Logo 1.png" alt="logo"></a>
             </div>
             <div class="bars">
-              <i class="fas fa-bars" style="font-size: 24px; color: #8c2c8f;"></i>
+              <i class="fas fa-bars"></i>
             </div>
           </div>
         </div>
@@ -725,17 +344,18 @@
         <div class="row">
           <div class="col-lg-6">
             <div class="banner-text position-relative z-2">
-              <span class="mb-3 d-block">Cyber Security</span>
+              <span class="mb-3">Cyber Security</span>
               <h1 class="banner-title split-text right">
                 Start securing your business the smart way.
 Think proactive, think safe, think beyond passwords.
 
               </h1>
-              <p class="mb-3">
+              <p>
                 From homegrown entrepreneurs to growing brands and digital-first enterprises,
-                 everyone depends on data. In today's connected world, cyber threats are real, but preventable.
+                 everyone depends on data. In today’s connected world, cyber threats are real, but preventable.
               </p>
-              <p class="mb-4">We're here to make cybersecurity simple, effective, and legally sound for every kind of business. </p>
+              <p>We’re here to make cybersecurity simple, effective, and legally sound for every kind of business. </p>
+              <br>
               <div class="banner-buttons d-flex flex-column align-items-start" style="margin-top:0px;">
                 <!-- <a href="getstarted.html" class="theme-btn position-relative d-inline-flex align-items-center">
                   GetStarted
@@ -1047,92 +667,50 @@ container.addEventListener('mouseleave', () => {
             </div>
             
           </div>
+         <!-- <div class="col-lg-6">
+            <div class="feature-image position-relative">
+              <span class="custom-shadown position-absolute rounded-pill"></span>
+              <div class="img-one overflow-hidden rounded-20 position-relative">
+                <img src="assets/img/main-images/IMG-20250626-WA0013.png" alt="about-img"
+                  class="img-fluid w-100 rounded-20 purple-filter" id="globe">                  
+              </div>
+              <span class="custom-shadown3 position-absolute rounded-pill"></span>
+            </div>
+          </div> -->
+          
+
+        </div>
+
+        <div class="row">
+           
+          <div class="col-lg-6 d-flex align-items-end pt-5">
+            <div class="feature-text position-relative feature-text2">
+              <div class="section-title-block">
+                <p class="highlight-word mb-4">We are best at our  <span>Services</span></p>
+              <h1 class="banner-title mb-4 split-text right">Client-Centric Since 2010 </h1>
+              <p>AVANZO stands for commitment, clarity, and confidence. We align with your 
+                objectives to deliver cybersecurity that works for your people, your operations, and your future.</p>
+              </div>
+              <b class="position-absolute">03</b>
+            </div>
+            
+          </div>
          <div class="col-lg-6">
             <div class="feature-image position-relative">
               <span class="custom-shadown position-absolute rounded-pill"></span>
               <div class="img-one overflow-hidden rounded-20 position-relative">
-                <a href="https://avanzoacademy.com/" target="_blank">
-  <img src="assets/img/main-images/newlogo-removebg-preview.png" 
-       alt="about-img" 
-       class="img-fluid w-100 rounded-20 purple-filter">
-</a>
-
+                <img src="assets/img/main-images/IMG-20250626-WA0013.png" alt="about-img"
+                  class="img-fluid w-100 rounded-20 purple-filter" id="globe">                  
               </div>
               <span class="custom-shadown3 position-absolute rounded-pill"></span>
             </div>
           </div>
           
 
+
+          
+
         </div>
-
-        <div class="row align-items-center">
-  <!-- Left: Image with animation -->
-  <div class="col-lg-6 order-lg-1 mb-4 mb-lg-0">
-    <div class="feature-image position-relative animate-left">
-      <span class="custom-shadown position-absolute rounded-pill"></span>
-      <div class="img-one overflow-hidden rounded-20 position-relative">
-        <img src="assets/img/main-images/IMG-20250626-WA0013.png" 
-             alt="about-img"
-             class="img-fluid w-100 rounded-20 purple-filter" 
-             id="globe">                  
-      </div>
-      <span class="custom-shadown3 position-absolute rounded-pill"></span>
-    </div>
-  </div>
-
-  <!-- Right: Text content -->
-  <div class="col-lg-6 d-flex align-items-lg-end pt-5 order-lg-2">
-    <div class="feature-text position-relative feature-text2">
-      <div class="section-title-block">
-        <p class="highlight-word mb-4">
-          We are best at our <span>Services</span>
-        </p>
-        <h1 class="banner-title mb-4 split-text right">
-          Client-Centric Since 2010
-        </h1>
-        <p>
-          AVANZO stands for commitment, clarity, and confidence. 
-          We align with your objectives to deliver cybersecurity 
-          that works for your people, your operations, and your future.
-        </p>
-      </div>
-      <b class="position-absolute">03</b>
-    </div>
-  </div>
-</div>
-
-<!-- CSS for animation -->
-<style>
-.animate-left {
-  opacity: 0;
-  transform: translateX(-100px);
-  transition: all 1s ease-in-out;
-}
-
-.animate-left.visible {
-  opacity: 1;
-  transform: translateX(0);
-}
-</style>
-
-<!-- JavaScript for triggering animation -->
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  const animateLeft = document.querySelector(".animate-left");
-  
-  function handleScroll() {
-    const rect = animateLeft.getBoundingClientRect();
-    if (rect.top < window.innerHeight - 100) {
-      animateLeft.classList.add("visible");
-    }
-  }
-
-  window.addEventListener("scroll", handleScroll);
-  handleScroll(); // run once on load
-});
-</script>
-
-
 
         <div class="row mt-0">
           <div class="col-lg-4">
@@ -1506,7 +1084,7 @@ customers</span>
             <p class="highlight-word mb-4">Our Core <span>Force</span></p>
             <h1 class="banner-title mb-4 split-text right">A team that delivers unmatched expertise and dedicated support at every step.</h1>
           </div>
-          <b class="position-absolute">03</b>
+          <b class="position-absolute">04</b>
         </div>
       </div>
     </div>
@@ -1616,15 +1194,15 @@ customers</span>
     <div class="row align-items-start">
       
       <!-- Combined Logo and Address Column -->
-<div class="col-md-6 d-flex flex-column flex-md-row align-items-center align-items-md-start mb-4 mb-md-0">
+<div class="col-md-6 d-flex align-items-center mb-4 mb-md-0">
 
   <!-- 1. Logo Link -->
-  <a class="navbar-brand me-md-3 mb-3 mb-md-0" href="index.html">
-    <img src="assets/img/main-images/AVZ Logo 1.png" alt="logo" class="img-fluid" style="max-height: 150px;">
+  <a class="navbar-brand me-3" href="index.html">
+    <img src="assets/img/main-images/AVZ Logo 1.png" alt="logo" class="img-fluid" style="max-height: 200px;">
   </a>
 
   <!-- 2. Address Info -->
-  <div class="text-center text-md-start">
+  <div>
     <small class="d-block text-muted" style="font-size: 0.80rem;">
       <span class="fw-bold d-block mb-1">A V Z cyber security solutions L. L. C</span>
       Office No: 04, Workspace Downtown Business Centre, Next to Dubai mall metro exit 2, Al-Wasl Building, Sheik Zayed Road, Dubai, UAE.
@@ -1730,26 +1308,14 @@ arrows: false,
 dots: false,
 pauseOnHover: false,
 responsive: [{
-breakpoint: 1024,
+breakpoint: 768,
 settings: {
 slidesToShow: 3
 }
 }, {
-breakpoint: 768,
+breakpoint: 520,
 settings: {
 slidesToShow: 2
-}
-}, {
-breakpoint: 480,
-settings: {
-slidesToShow: 1
-}
-}, {
-breakpoint: 320,
-settings: {
-slidesToShow: 1,
-centerMode: true,
-centerPadding: '10px'
 }
 }]
 });
