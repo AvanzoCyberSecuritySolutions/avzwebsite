@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>$50 Battering RAM Attack Breaks Intel and AMD Cloud Security Protections</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans leading-relaxed text-gray-800">
+    <div class="max-w-3xl mx-auto px-4 py-12 bg-white shadow-lg rounded-lg my-8">
+        <!-- Article Header -->
+        <header class="mb-8 text-center">
+            <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-2 leading-tight">
+                $50 Battering RAM Attack Breaks Intel and AMD Cloud Security Protections
+            </h1>
+            <div class="text-sm text-gray-500 mt-4">
+                <span>Date: September 30, 2025</span> • 
+                <span>Category: Hardware Security / Encryption</span>
+            </div>
+        </header>
+
+        <!-- Article Content -->
+        <article class="prose prose-lg max-w-none">
+            <!-- Lead Paragraph -->
+            <p class="text-xl font-medium text-gray-700 mb-6">
+                A team of academics from KU Leuven and the University of Birmingham has revealed a low-cost hardware attack—called Battering RAM—that can bypass modern memory-encryption protections on Intel and AMD cloud processors. The attack relies on a tiny, inexpensive DDR4 interposer (the researchers say it can be built for about $50) that sits between CPU and memory and, when flipped into a malicious mode, stealthily manipulates physical memory addresses to read or corrupt protected memory.
+            </p>
+
+            <!-- Main Content Sections -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">What is Battering RAM?</h2>
+                <p>
+                    Battering RAM uses a custom-built DDR4 interposer placed inline in the memory channel. During boot it behaves normally and passes trust checks; later it can be switched to a malicious state where it:
+                </p>
+                <ul class="list-disc list-inside space-y-2 mt-4">
+                    <li>Redirects physical addresses to attacker-controlled locations,</li>
+                    <li>Corrupts or replays encrypted memory contents, and</li>
+                    <li>Circumvents boot-time alias checks used by platform protections.</li>
+                </ul>
+                <p class="mt-4">
+                    Because the interposer operates at the memory signal level—with simple analog switches—it can be cheap, small, and hard to detect with software-only checks.
+                </p>
+            </section>
+
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Targets and Impact</h2>
+                <p>
+                    The attack impacts systems using DDR4 memory that rely on hardware-based memory encryption for confidential computing:
+                </p>
+                <ul class="list-disc list-inside space-y-2 mt-4">
+                    <li><strong>Intel SGX (Software Guard Extensions):</strong> Battering RAM can enable arbitrary reads of plaintext or writes into SGX enclaves.</li>
+                    <li><strong>AMD SEV-SNP (Secure Encrypted Virtualization with Secure Nested Paging):</strong> The interposer can bypass firmware mitigations and insert backdoors or tamper with guest memory without raising alarms.</li>
+                </ul>
+                <p class="mt-4">
+                    In practical terms, a malicious cloud provider or an insider with limited physical access could use this technique to subvert remote attestation and compromise the confidentiality/integrity of protected workloads.
+                </p>
+            </section>
+
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">How the Attack Works (High Level)</h2>
+                <ul class="list-disc list-inside space-y-2">
+                    <li>A DDR4 interposer is inserted in the DIMM slot path (or otherwise placed in the memory signal path).</li>
+                    <li>On startup it appears benign—passing checks and remaining unnoticed.</li>
+                    <li>When activated, the interposer dynamically aliases physical addresses, redirecting memory reads/writes to attacker-controlled locations.</li>
+                </ul>
+                <p class="mt-4">
+                    Because common scalable memory-encryption designs omit cryptographic freshness checks (to support large protected memory regions), attackers can replay or swap blocks without detection, enabling exfiltration or tampering of supposedly-encrypted memory.
+                </p>
+            </section>
+
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Why Current Defenses Fall Short</h2>
+                <p>
+                    The researchers argue that modern memory encryption schemes traded cryptographic freshness for scale. They typically focus on encrypting memory contents but do not cryptographically tie location or freshness to detect dynamic aliasing. 
+                </p>
+                <p class="mt-4">
+                    Battering RAM exploits this gap: by changing which physical addresses map to which encrypted blocks at runtime, it creates aliases that defeat boot-time checks and encryption-only protections.
+                </p>
+                <p class="mt-4">
+                    Vendors (Intel, AMD, Arm) reportedly consider physical attacks as out-of-scope for current threat models, which means defending against Battering RAM would require substantial redesigns of memory-encryption architectures—potentially including cryptographic freshness or integrity mechanisms that protect address-to-data bindings.
+                </p>
+            </section>
+
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Related Research & Context</h2>
+                <p>
+                    Battering RAM arrives amid a spate of high-impact hardware and virtualization disclosures:
+                </p>
+                <ul class="list-disc list-inside space-y-2 mt-4">
+                    <li><strong>Heracles & Relocate-Vote (AMD):</strong> Previously disclosed techniques that allow malicious hypervisors to leak data from SEV-SNP guests.</li>
+                    <li><strong>Stack engine side channels (ETH Zürich):</strong> Abuse of CPU optimizations to leak data from AMD Zen 5 and possibly other models.</li>
+                    <li><strong>L1TF Reloaded (Vrije Universiteit Amsterdam):</strong> New combinations of L1 Terminal Fault and Spectre-like gadgets yielding arbitrary RAM reads from VMs.</li>
+                    <li><strong>VMScape (ETH Zürich):</strong> Spectre-BTI variant that breaks virtualization boundaries and leaks memory across host/guest (CVE-2025-40300).</li>
+                </ul>
+                <p class="mt-4">
+                    These disclosures emphasize that CPU and platform microarchitectural features plus cloud memory-management practices repeatedly open avenues for cross-VM and host-guest data exposure.
+                </p>
+            </section>
+
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Vendor Response & Responsible Disclosure</h2>
+                <p>
+                    The research was reported to vendors earlier in the year. According to the researchers, Intel, AMD, and Arm indicated that physical attacks are currently considered out of scope, and that robust mitigation against Battering RAM would likely require changes to core memory-encryption designs.
+                </p>
+                <p class="mt-4">
+                    Separately, Google supplied a sole-tenant node to the researchers for safe experiments and applied fixes to affected infrastructure, while also awarding a bug bounty for related disclosure work.
+                </p>
+            </section>
+
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Practical Implications for Cloud Customers</h2>
+                <p>
+                    Confidential computing customers relying solely on SGX or SEV-SNP for protection against malicious cloud operators should be aware that physical-layer attacks remain a practical risk in shared or untrusted infrastructure.
+                </p>
+                <p class="mt-4">
+                    The attack highlights the need for defense-in-depth: combine hardware protections with attestation, application-level encryption, strict supply-chain controls, and physical security guarantees.
+                </p>
+                <p class="mt-4">
+                    For the highest assurance workloads, consider using single-tenant or physically controlled infrastructure, or augment encryption with methods that bind data integrity to physical location/freshness where possible.
+                </p>
+            </section>
+
+            <section>
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Technical and Research Takeaways</h2>
+                <ul class="list-disc list-inside space-y-2">
+                    <li>Battering RAM shows that very low-cost hardware insertions can subvert high-profile platform security features.</li>
+                    <li>Memory-encryption schemes that omit freshness/integrity checks are fundamentally limited against active physical manipulation.</li>
+                    <li>Addressing these weaknesses is non-trivial and may require rethinking memory encryption architecture, adding integrity/freshness checks, or changing how remote attestation treats physical-layer threats.</li>
+                </ul>
+            </section>
+        </article>
+    </div>
+</body>
+</html>

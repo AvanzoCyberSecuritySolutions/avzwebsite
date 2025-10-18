@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Beware SORVEPOTEL: The Self-Spreading WhatsApp Malware You Didn’t See Coming</title>
+  <meta name="description" content="Learn about SORVEPOTEL, a self-spreading WhatsApp malware that infects Android devices through trusted chats. Understand how it works and how to protect yourself." />
+  <meta name="keywords" content="SORVEPOTEL, WhatsApp malware, Android virus, cybersecurity, mobile malware, self-spreading malware" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans leading-relaxed text-gray-800">
+  <div class="max-w-3xl mx-auto px-4 py-12">
+    <main class="bg-white shadow-lg rounded-lg overflow-hidden">
+      <!-- Header -->
+      <header class="px-6 py-10 text-center">
+        <h1 class="text-3xl md:text-4xl font-bold text-gray-900 leading-tight mb-3">
+          Beware SORVEPOTEL: The Self-Spreading WhatsApp Malware You Didn’t See Coming
+        </h1>
+        <div class="text-sm text-gray-500">
+          <span>Date: October 2025</span> •
+          <span>Category: Mobile Security / Malware</span>
+        </div>
+      </header>
+
+      <!-- Article Content -->
+      <article class="prose prose-lg max-w-none px-6 pb-10">
+        <p class="text-xl font-medium text-gray-700">
+          When your phone surfaces a new message from someone you know, it usually means a greeting, a meme, or a forwarded joke. But what if that friendly message was a Trojan horse — a stealthy malware designed not only to infect your device, but to broadcast itself via WhatsApp and trap others in its path?
+        </p>
+
+        <p class="text-gray-700">
+          That’s exactly what researchers are warning about now: a self-spreading WhatsApp malware called <strong>SORVEPOTEL</strong>. It’s real, it’s scary, and knowing how it works — and how to defend yourself — is more urgent than ever.
+        </p>
+
+        <h2>What Is SORVEPOTEL?</h2>
+        <p class="text-gray-700">
+          “<strong>Sorvepotel</strong>” is a freshly uncovered strain of malware targeting Android devices. What makes it stand out is its ability to <strong>self-propagate over WhatsApp</strong> — meaning it doesn’t need a user to download or install it manually in every case. Instead, it can forward itself, leveraging WhatsApp’s messaging system as its delivery mechanism.
+        </p>
+        <p class="text-gray-700">In essence, once SORVEPOTEL lands on a device, it can:</p>
+        <ul>
+          <li>Send itself via WhatsApp to contacts or groups</li>
+          <li>Intercept and read messages</li>
+          <li>Engage in data theft, device control, or further propagation</li>
+          <li>Remain stealthy, hiding under the guise of legitimate processes</li>
+        </ul>
+        <p class="text-gray-700">It’s a dangerous blend: social engineering + automation + stealth.</p>
+
+        <h2>How Does It Work?</h2>
+        <p class="text-gray-700">
+          Here’s a breakdown of SORVEPOTEL’s infection and spread chain, based on what researchers have observed (or hypothesized):
+        </p>
+
+        <h3>Initial Infection</h3>
+        <ul>
+          <li>Through an app sideload, malicious link, or fake update prompt.</li>
+          <li>The malware gains permissions (like access to SMS, contacts, storage, and — crucially — control over WhatsApp APIs or accessibility services).</li>
+        </ul>
+
+        <h3>Permission Escalation &amp; Persistence</h3>
+        <ul>
+          <li>It may request or exploit accessibility rights, overlay windows, or other Android features to sustain itself.</li>
+          <li>It hides its icon or runs as a disguised system-like component to avoid user notice.</li>
+        </ul>
+
+        <h3>WhatsApp Messaging Propagation</h3>
+        <ul>
+          <li>The malware crafts a message (often including a link or attachment) and sends it to your contacts or group chats.</li>
+          <li>That link or attachment is itself a dropper or launcher for SORVEPOTEL on the target device.</li>
+        </ul>
+
+        <h3>Payload Execution</h3>
+        <ul>
+          <li>On a newly infected phone, SORVEPOTEL may harvest data (contacts, SMS, files), monitor communications, or open remote access.</li>
+          <li>It may further self-propagate by repeating the same process.</li>
+        </ul>
+
+        <h3>Stealth &amp; Evasion</h3>
+        <ul>
+          <li>The malware monitors device use and pauses activity during suspicious periods or when users open security apps.</li>
+          <li>It can obfuscate its operations and network traffic to bypass detection.</li>
+        </ul>
+
+        <h2>Why This Is a Big Problem</h2>
+        <ul>
+          <li><strong>Trust channel hijacked:</strong> WhatsApp is inherently trusted — for most people, a message from a friend or family member doesn’t raise suspicion.</li>
+          <li><strong>Automatic spread:</strong> Unlike typical malware needing user action, SORVEPOTEL leverages the social graph to replicate itself.</li>
+          <li><strong>High privileges &amp; control:</strong> Because it asks for powerful permissions, it can do deep damage.</li>
+          <li><strong>Difficult to spot:</strong> Its stealth features make detection tough, especially for non-technical users.</li>
+          <li><strong>Rapid impact:</strong> Once unleashed in a network (say, a family group or organizational chat), it can infect many devices quickly.</li>
+        </ul>
+
+        <h2>How to Protect Yourself (and Others)</h2>
+
+        <h3>For Personal Users</h3>
+        <ul>
+          <li><strong>Install apps only from trusted sources:</strong> Use Google Play Store or verified app sources. Avoid sideloading unknown APKs.</li>
+          <li><strong>Be cautious of messages with links or attachments:</strong> Even if a message looks like it came from a friend, confirm before opening files or links.</li>
+          <li><strong>Limit permissions:</strong> Deny apps that request Accessibility, SMS, or Contacts access if not essential.</li>
+          <li><strong>Use built-in Android protections:</strong> Turn on Google Play Protect, security scans, and app verification.</li>
+          <li><strong>Keep the OS and apps updated:</strong> Security patches close vulnerabilities malware can exploit.</li>
+          <li><strong>Use reliable mobile security tools:</strong> Employ scanners or EDR solutions for mobile.</li>
+          <li><strong>Backup data &amp; enable remote wipe:</strong> So if a device is compromised, it can be wiped clean.</li>
+          <li><strong>Warn your contacts:</strong> If you suspect your number is sending malicious messages, alert others to avoid opening suspicious content.</li>
+        </ul>
+
+        <h3>For Organizations &amp; Teams</h3>
+        <ul>
+          <li><strong>Enforce mobile device policies:</strong> Use MDM to restrict app installations and permissions.</li>
+          <li><strong>Threat awareness training:</strong> Educate staff about phishing, malware propagation, and link risks.</li>
+          <li><strong>Network monitoring &amp; anomaly detection:</strong> Watch outbound traffic for suspicious patterns.</li>
+          <li><strong>Segment internal communications:</strong> Use secure messaging apps for sensitive communication.</li>
+          <li><strong>Regular audits:</strong> Check devices’ permissions, installed apps, and processes for anomalies.</li>
+        </ul>
+
+        <h2>Final Word</h2>
+        <p class="text-gray-700">
+          Malware like SORVEPOTEL illustrates a troubling trend: blending social engineering with automation to sidestep traditional defenses. It weaponizes trust — your contacts, your group chats — to infiltrate devices invisibly.
+        </p>
+        <p class="text-gray-700">
+          In a world where messaging is second nature, we must treat any link, file, or install request with a critical eye. Self-spreading malware is no longer science fiction — it’s a real threat in the palm of your hand.
+        </p>
+      </article>
+    </main>
+  </div>
+</body>
+</html>

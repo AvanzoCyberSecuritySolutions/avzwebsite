@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ChaosBot: a new Rust backdoor that uses Discord to control infected PCs</title>
+  <meta name="description" content="ChaosBot is a Rust backdoor using Discord C2. Learn how it works, IOCs (identity_helper.exe, msedge_elf.dll, LNK vectors), and immediate mitigation steps." />
+  <meta name="keywords" content="ChaosBot, Chaos-C++, Rust backdoor, Discord C2, DLL sideloading, ransomware, IOCs, FRP, VS Code Tunnel" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans leading-relaxed text-gray-800">
+  <div class="max-w-3xl mx-auto px-4 py-12">
+    <main class="bg-white shadow-lg rounded-lg overflow-hidden">
+      <!-- Header -->
+      <header class="px-6 py-10 text-center">
+        <h1 class="text-3xl md:text-4xl font-bold text-gray-900 leading-tight mb-3">
+          ChaosBot: a new Rust backdoor that uses Discord to control infected PCs
+        </h1>
+        <div class="text-sm text-gray-500">
+          <span>Disclosed: October 13, 2025</span> •
+          <span>Category: Malware / Threat Intelligence</span>
+        </div>
+      </header>
+
+      <!-- Article Content -->
+      <article class="prose prose-lg max-w-none px-6 pb-10">
+        <p class="text-xl font-medium text-gray-700">
+          A fresh, worrying entrant in the threat landscape — <strong>ChaosBot</strong> — was first observed in late September 2025 in a financial-services environment and publicly disclosed on October 13, 2025. Written in Rust, this backdoor stands out because it uses <strong>Discord channels as its command-and-control (C2)</strong> and combines reconnaissance, remote command execution, modern persistence, and evasion techniques. A related family, <strong>Chaos‑C++</strong>, has evolved into destructive ransomware that also hijacks clipboards to steal cryptocurrency.
+        </p>
+
+        <h2>TL;DR — Quick summary</h2>
+        <ul>
+          <li><strong>Malware:</strong> ChaosBot (Rust backdoor); Chaos‑C++ (C++ ransomware with destructive & clipboard-hijack features).</li>
+          <li><strong>C2 channel:</strong> Discord channels (operator accounts observed: <code>chaos_00019</code>, <code>lovebb0024</code> — may change).</li>
+          <li><strong>Distribution:</strong> Compromised credentials (Cisco VPN, over-privileged AD service account) and phishing LNK shortcuts that launch PowerShell to fetch payloads.</li>
+          <li><strong>Persistence:</strong> DLL sideloading (<code>msedge_elf.dll</code>) via trojanized Edge binary (<code>identity_helper.exe</code>); also deploys FRP reverse proxy and attempts VS Code Tunnel backdoor.</li>
+          <li><strong>Evasion:</strong> ETW patching (ntdll!EtwEventWrite) and VM detection via MAC prefix checks.</li>
+          <li><strong>Ransomware:</strong> Chaos‑C++ deletes files >1.3 GB, encrypts smaller files, and hijacks clipboard crypto addresses.</li>
+        </ul>
+
+        <h2>Technical breakdown — what ChaosBot does</h2>
+        <p class="text-gray-700">
+          ChaosBot is primarily a remote-control backdoor. Once executed it:
+        </p>
+        <ul>
+          <li>Performs system reconnaissance (enumeration, environment checks).</li>
+          <li>Connects to a Discord channel created by the operator (often named after the victim hostname) and polls for commands — replacing bespoke C2 infra with a resilient public platform.</li>
+          <li>Supports interactive commands: <code>shell</code> (execute commands), <code>scr</code> (screenshots), <code>download/upload</code>, and file exfiltration via Discord posts.</li>
+          <li>Deploys tooling such as an FRP reverse proxy to open persistent tunnels into the breached environment.</li>
+          <li>Attempts to install alternate backdoors (observed attempts to use VS Code Tunnel).</li>
+          <li>Achieves persistence through DLL sideloading: <code>identity_helper.exe</code> (trojanized Edge binary) loads <code>msedge_elf.dll</code>.</li>
+        </ul>
+
+        <h2>How it spreads</h2>
+        <p class="text-gray-700">
+          Two main vectors were observed in the disclosure:
+        </p>
+        <ul>
+          <li><strong>Compromised credentials + lateral execution:</strong> Stolen Cisco VPN credentials and over-privileged Active Directory service accounts were used to run remote WMI commands and push ChaosBot across hosts.</li>
+          <li><strong>Phishing with malicious LNK files:</strong> Targets receive an LNK file; opening it runs a PowerShell one-liner that downloads the payload and shows a decoy PDF (e.g., spoofed bank doc) to distract the victim.</li>
+        </ul>
+
+        <h2>Evasion techniques</h2>
+        <ul>
+          <li><strong>ETW patching:</strong> ChaosBot patches the start of <code>ntdll!EtwEventWrite</code> to hinder Event Tracing for Windows (ETW) detections.</li>
+          <li><strong>VM detection:</strong> The malware checks MAC prefixes for VMware/VirtualBox vendors and exits if it detects a sandbox/VM to avoid analysis.</li>
+        </ul>
+
+        <h2>Chaos‑C++ ransomware: destructive + clipboard theft</h2>
+        <p class="text-gray-700">
+          A related family — <strong>Chaos‑C++</strong> — exhibits destructive and financial-theft features:
+        </p>
+        <ul>
+          <li>Deletes files larger than ~1.3 GB (irrecoverable) while encrypting smaller files.</li>
+          <li>Hijacks the clipboard: when it detects cryptocurrency addresses, it replaces them with attacker-controlled addresses to intercept transfers.</li>
+          <li>Installer masquerades as bogus utilities (e.g., “System Optimizer v2.1”).</li>
+          <li>Looks for <code>%APPDATA%\READ_IT.txt</code> — presence may change behavior (monitoring mode); when absent and running as admin, it disables recovery features.</li>
+        </ul>
+
+        <h2>Indicators of Compromise (IOCs) & telltale signs</h2>
+        <p class="text-gray-700">
+          Hunt for these artifacts and behaviors:
+        </p>
+        <ul>
+          <li><strong>Files/processes:</strong> <code>identity_helper.exe</code>, <code>msedge_elf.dll</code>, <code>%APPDATA%\READ_IT.txt</code>.</li>
+          <li><strong>Distribution artifacts:</strong> malicious <code>.lnk</code> files, decoy PDFs, PowerShell one-liners that fetch executables.</li>
+          <li><strong>Network:</strong> Unusual Discord API calls or channel activity tied to hostnames; FRP or unexpected reverse-proxy tunnels; anomalous VS Code Tunnel connections.</li>
+          <li><strong>Accounts/behavior:</strong> Suspicious AD service account activity, WMI remote executions, Cisco VPN logins from unfamiliar IPs.</li>
+          <li><strong>Discord identifiers:</strong> Operator accounts observed (examples): <code>chaos_00019</code>, <code>lovebb0024</code> — these may rotate.</li>
+        </ul>
+
+        <h2>Immediate mitigation & detection recommendations</h2>
+        <ul>
+          <li><strong>Harden credentials & access:</strong> Revoke/rotate compromised credentials, enforce MFA for VPN and privileged accounts, and remove over-privileged service accounts.</li>
+          <li><strong>Block LNK-based phishing:</strong> Configure email gateways to block suspicious <code>.lnk</code> attachments; detect and quarantine PowerShell download events.</li>
+          <li><strong>Monitor DLL sideloading:</strong> Alert on non-standard DLLs loaded by browser or legitimate binaries (e.g., Edge variants loading <code>msedge_elf.dll</code>).</li>
+          <li><strong>Network monitoring:</strong> Detect Discord API access from endpoints that shouldn’t use Discord; flag unknown outbound FRP tunnels or reverse proxies.</li>
+          <li><strong>Detect ETW tampering & VM checks:</strong> Monitor for modifications to <code>ntdll!EtwEventWrite</code> and unusual process exits in virtualized environments.</li>
+          <li><strong>Protect crypto flows:</strong> Educate users and implement clipboard protections or endpoint controls to detect suspicious clipboard swaps.</li>
+          <li><strong>Backup & recovery:</strong> Maintain immutable offline backups and IR playbooks for extortion/destruction scenarios.</li>
+        </ul>
+
+        <h2>Conclusion</h2>
+        <p class="text-gray-700">
+          ChaosBot shows how modern adversaries compose multiple tools and public platforms (Discord, FRP, VS Code Tunnel) to build resilient, stealthy C2 channels. Paired with the evolution of Chaos‑C++ into destructive and financially-motivated ransomware, the threat demonstrates credential abuse, DLL sideloading persistence, reverse-proxying, and sophisticated anti-analysis techniques.
+        </p>
+        <p class="text-gray-700">
+          If you manage endpoints or networks: assume attackers are innovating and proactively hunt for the artifacts above. I can convert this into a concise incident-response checklist, a slide deck for SOC briefings, or a SOC playbook (IR steps + detection rules) — tell me which format you want and I’ll produce it next.
+        </p>
+      </article>
+    </main>
+  </div>
+</body>
+</html>

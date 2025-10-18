@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pandoc SSRF (CVE-2025-51591): How Attackers Tried to Steal EC2 IAM Credentials and How to Protect Your Cloud</title>
+    <meta name="description" content="Attackers exploited Pandoc SSRF (CVE-2025-51591) to target AWS IMDS. Learn how IMDSv2, Pandoc sandboxing, and least-privilege roles stop the attack.">
+    <meta name="keywords" content="Cloud security, AWS, IMDSv2, Pandoc, SSRF, Incident response, Vulnerability">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans leading-relaxed text-gray-800">
+    <div class="max-w-3xl mx-auto px-4 py-12 bg-white shadow-lg rounded-lg my-8">
+        <!-- Article Header -->
+        <header class="mb-8 text-center">
+            <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-2 leading-tight">
+                Hackers Abuse Pandoc SSRF (CVE-2025-51591) to Target AWS IMDS — How It Works and How to Protect Your Cloud
+            </h1>
+            <div class="text-sm text-gray-500 mt-4">
+                <span>Date: October 2025</span> • 
+                <span>Category: Cloud Security / Vulnerability Analysis</span>
+            </div>
+        </header>
+
+        <!-- TL;DR -->
+        <section class="mb-8">
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">TL;DR</h2>
+            <p>
+                Attackers have been observed exploiting a Server-Side Request Forgery (SSRF) bug in Pandoc (CVE-2025-51591) to try to access the AWS Instance Metadata Service (IMDS) and steal temporary EC2 IAM credentials. The attempts were largely blocked where IMDSv2 was enforced. If you process untrusted HTML with Pandoc, treat inputs as hostile: sanitize, or render with <code>-f html+raw_html</code> / <code>--sandbox</code>, and enforce IMDSv2 + least-privilege IAM roles across EC2.
+            </p>
+        </section>
+
+        <!-- What Happened -->
+        <section class="mb-8">
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">What Happened (Short Version)</h2>
+            <p>
+                Security researchers at Wiz found real-world attempts to exploit a Pandoc vulnerability (CVE-2025-51591) that renders <code>&lt;iframe&gt;</code> tags in HTML. Attackers crafted HTML documents whose iframe <code>src</code> pointed at the AWS Instance Metadata Service (<code>169.254.169.254</code>) to try to read instance metadata paths such as <code>/latest/meta-data/iam</code> and <code>/latest/meta-data/iam/info</code>. Those metadata paths can return temporary IAM credentials for EC2 instances — and if stolen, those credentials let attackers call AWS APIs (S3, RDS, DynamoDB, etc.) without needing long-lived keys.
+            </p>
+        </section>
+
+        <!-- Why This Matters -->
+        <section class="mb-8">
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">Why This Matters</h2>
+            <p>
+                IMDS exists to let software running on EC2 obtain identity and configuration information without storing secrets on disk. But IMDS is reachable from the instance itself (link-local address). When a web application or utility running on an instance is vulnerable to SSRF, an attacker can make that app request metadata on their behalf — effectively turning the app into a proxy to internal services. That’s a common and high-impact cloud attack path because it can bypass perimeter defenses and IP whitelists.
+            </p>
+        </section>
+
+        <!-- Technical Root Cause -->
+        <section class="mb-8">
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">The Technical Root Cause</h2>
+            <ul class="list-disc list-inside space-y-2">
+                <li><strong>Vulnerability type:</strong> SSRF (Server-Side Request Forgery)</li>
+                <li><strong>Where:</strong> Pandoc’s HTML rendering — Pandoc renders <code>&lt;iframe&gt;</code> elements by default</li>
+                <li><strong>Exploit vector:</strong> Attackers submit or trick an application into processing crafted HTML with <code>&lt;iframe src="http://169.254.169.254/...&gt;</code>. Rendering could expose metadata.</li>
+                <li><strong>Why IMDSv2 helps:</strong> IMDSv2 requires a session token (via PUT + header <code>X-aws-ec2-metadata-token</code>), blocking simple SSRF grabs.</li>
+            </ul>
+        </section>
+
+        <!-- Observations -->
+        <section class="mb-8">
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">What Wiz Observed</h2>
+            <p>
+                Wiz reported in-the-wild exploitation attempts beginning in August and continuing for several weeks. In observed cases, the attacks were unsuccessful when targets enforced IMDSv2. The researchers also saw parallel attempts targeting other SSRF flaws (for example, in ClickHouse) against other cloud providers.
+            </p>
+        </section>
+
+        <!-- Recommended Mitigations -->
+        <section class="mb-8">
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">Recommended Mitigations — Short Checklist</h2>
+            <ul class="list-disc list-inside space-y-2">
+                <li>Enforce IMDSv2 on all EC2 instances.</li>
+                <li>Disable IMDSv1 where possible; require token flow.</li>
+                <li>Apply Pandoc mitigations when processing untrusted HTML:
+                    <ul class="list-disc list-inside ml-5">
+                        <li>Use <code>-f html+raw_html</code> or <code>--sandbox</code> to prevent iframe inclusions.</li>
+                        <li>Sanitize inputs server-side: strip or validate dangerous tags.</li>
+                    </ul>
+                </li>
+                <li>Follow the principle of least privilege (PoLP): give roles only needed permissions.</li>
+                <li>Harden web apps against SSRF: validate URLs, block <code>169.254.0.0/16</code>, use allowlists.</li>
+                <li>Monitor for unusual metadata access; enable GuardDuty or IDS alerts.</li>
+                <li>Keep Pandoc updated and follow security advisories.</li>
+            </ul>
+        </section>
+
+        <!-- Developer Recommendations -->
+        <section class="mb-8">
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">Recommended Developer / Server Configuration for Pandoc</h2>
+            <p>If you must render external or user-submitted HTML with Pandoc, choose one of these safer modes:</p>
+            <ul class="list-disc list-inside space-y-2 mt-4">
+                <li><code>pandoc -f html+raw_html ...</code> — disables automatic inclusion of external content via iframe src.</li>
+                <li><code>pandoc --sandbox ...</code> — runs Pandoc in a restricted mode that prevents unsafe operations.</li>
+                <li>Additionally, sanitize HTML server-side (for example, remove <code>&lt;iframe&gt;</code> tags entirely) before handing content to Pandoc.</li>
+            </ul>
+        </section>
+
+        <!-- Real Examples -->
+        <section class="mb-8">
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">Real Examples and Historical Context</h2>
+            <p>
+                SSRF against cloud metadata is a well-known and practical technique — Mandiant and others have documented attackers abusing IMDS via SSRF (for example CVE-2021-21311 used against Adminer). The Pandoc exploitation attempts illustrate that even less prominent tools can become vectors when they process untrusted input and render external references.
+            </p>
+        </section>
+
+        <!-- Final Thoughts -->
+        <section>
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">Final Thoughts (for Ops Teams and Developers)</h2>
+            <p>
+                Treat any service that renders user content as a high-risk surface. Assume attackers will look for SSRF in surprising places (document converters, analytics, logging tools). Combine platform-level controls (IMDSv2), application sanitization, and strong IAM practices to make credential theft much harder and reduce potential damage if it happens.
+            </p>
+        </section>
+    </div>
+</body>
+</html>
