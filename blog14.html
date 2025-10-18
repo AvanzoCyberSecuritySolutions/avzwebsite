@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity News Article</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans leading-relaxed text-gray-800">
+    <div class="max-w-3xl mx-auto px-4 py-12 bg-white shadow-lg rounded-lg my-8">
+        <!-- Article Header -->
+        <header class="mb-8 text-center">
+            <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-2 leading-tight">
+                The Dark Side of a Deal: How a Massive TikTok Shop Scam Is Stealing Credentials and Crypto
+            </h1>
+            <div class="text-sm text-gray-500 mt-4">
+                <span>Published: August 5, 2025</span>
+            </div>
+        </header>
+
+        <!-- Article Content -->
+        <article class="prose prose-lg max-w-none">
+            <!-- Lead Paragraph -->
+            <p class="text-xl font-medium text-gray-700 mb-6">
+                The digital marketplace is buzzing with incredible deals, especially on platforms like TikTok Shop. But what if that unbelievable discount is just a lure for a sophisticated scam? Cybersecurity researchers have uncovered a massive, AI-driven campaign dubbed ClickTok that’s targeting TikTok Shop users, stealing credentials, and even siphoning cryptocurrency. This isn't just a simple phishing attempt; it's a multi-layered attack that combines convincing social engineering with advanced malware.
+            </p>
+
+            <!-- Main Content Sections -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">The Anatomy of the ClickTok Campaign</h2>
+                <p>
+                    The threat actors behind this scheme have a dual strategy: they use phishing to trick users and malware to steal their data. It all starts with a deceptive ad. Scammers create realistic-looking ads on platforms like Facebook and TikTok itself. These aren't your typical low-quality spam ads; they feature AI-generated videos that mimic real influencers or brand ambassadors, promoting products at deeply discounted prices.
+                </p>
+                <p>
+                    When a user clicks on one of these ads, they're not taken to the real TikTok Shop. Instead, they land on one of over 15,000 fake domains identified by researchers. These websites are designed to look nearly identical to the legitimate platform, often using top-level domains like .top, .shop, and .icu to appear authentic.
+                </p>
+            </section>
+
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">The Three-Pronged Attack</h2>
+                <p>
+                    Once on the fake site, users are targeted with one of three primary scams, all with the ultimate goal of financial gain:
+                </p>
+                <ul class="list-disc list-inside space-y-2 mt-4">
+                    <li><strong>Fake Product Listings and Crypto Payments:</strong> The site advertises bogus products with heavy discounts, but instead of using traditional payment methods, it pushes users to make payments using cryptocurrency. The victim pays for a product that never existed and their crypto is stolen.</li>
+                    <li><strong>Affiliate Program Scams:</strong> The campaign also targets aspiring creators and affiliates. It convinces them to "top up" a fake on-site wallet with cryptocurrency under the false promise of earning future commission payouts or bonuses. These payouts never materialize, and their funds are stolen.</li>
+                    <li><strong>Credential and Data Theft:</strong> The most dangerous tactic involves stealing user credentials and distributing malicious apps. The fake login pages prompt users to enter their email and password. If that fails (a deliberate tactic by the scammers), they're prompted to log in with their Google account. This allows the attackers to steal valuable session tokens, giving them unauthorized access to the user’s account without needing in-app email verification.</li>
+                </ul>
+            </section>
+
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">More Than Just a Phishing Site: Introducing SparkKitty Malware</h2>
+                <p>
+                    In some cases, the fake TikTok Shop sites trick users into downloading a seemingly legitimate TikTok app. However, this is a trojanized version of the app that secretly installs a dangerous, cross-platform malware called SparkKitty.
+                </p>
+                <p>
+                    Once installed, SparkKitty goes to work. It's designed to steal more than just your TikTok credentials. It has the ability to "fingerprint" your device and even uses optical character recognition (OCR) to scan screenshots in your photo gallery. It’s specifically looking for something very valuable: cryptocurrency wallet seed phrases. If it finds them, it exfiltrates them to the attacker’s server, giving the scammers full access to your crypto wallets.
+                </p>
+            </section>
+
+            <section>
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">How to Stay Safe</h2>
+                <p>
+                    With scammers becoming increasingly sophisticated, it's more important than ever to be vigilant. Here are some key tips to protect yourself:
+                </p>
+                <ul class="list-disc list-inside space-y-2 mt-4">
+                    <li><strong>Be Skeptical of Deals That Seem Too Good to Be True:</strong> Heavily discounted products are a classic lure. If a deal is shockingly cheap, verify it on the official brand's website or the real TikTok Shop app.</li>
+                    <li><strong>Check the URL:</strong> Before you log in or enter any information, always look at the website's address. Legitimate websites will have a simple, official URL (e.g., tiktok.com). Be wary of anything with extra words, unusual characters, or strange top-level domains like .icu or .shop.</li>
+                    <li><strong>Download Apps from Official Stores Only:</strong> Only download the TikTok app (or any app) from the official Google Play Store or Apple App Store. Never install an app from a third-party website or a link in an ad.</li>
+                    <li><strong>Enable Two-Factor Authentication (2FA):</strong> 2FA adds an extra layer of security to your accounts. Even if a scammer gets your password, they won’t be able to log in without the second factor.</li>
+                    <li><strong>Be Cautious with Crypto Payments:</strong> The real TikTok Shop doesn't ask you to pay for products with cryptocurrency. This is a major red flag.</li>
+                </ul>
+                <p class="mt-4">
+                    The ClickTok campaign is a stark reminder of the evolving threats in the digital world. Scammers are using AI and sophisticated techniques to create a convincing illusion, so staying informed and cautious is the best defense.
+                </p>
+            </section>
+        </article>
+    </div>
+</body>
+</html>

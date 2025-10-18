@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity News Article</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans leading-relaxed text-gray-800">
+    <div class="max-w-3xl mx-auto px-4 py-12 bg-white shadow-lg rounded-lg my-8">
+        <!-- Article Header -->
+        <header class="mb-8 text-center">
+            <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-2 leading-tight">
+                CISA Urges Immediate Action on Actively Exploited D-Link Router Flaws
+            </h1>
+            <div class="text-sm text-gray-500 mt-4">
+                <span>Published: August 6, 2025</span>
+            </div>
+        </header>
+
+        <!-- Article Content -->
+        <article class="prose prose-lg max-w-none">
+            <!-- Lead Paragraph -->
+            <p class="text-xl font-medium text-gray-700 mb-6">
+                The U.S. Cybersecurity and Infrastructure Security Agency (CISA) has issued a critical warning, adding three older D-Link router vulnerabilities to its Known Exploited Vulnerabilities (KEV) catalog. This action comes after credible reports of these flaws being actively exploited in the wild, posing a significant risk to affected networks.
+            </p>
+
+            <!-- Main Content Sections -->
+            <section class="mb-8">
+                <p>
+                    The vulnerabilities, which date back to 2020 and 2022, impact several D-Link devices and have been assigned high-severity CVSS scores. Here's a breakdown of the flaws:
+                </p>
+                <ul class="list-disc list-inside space-y-2 mt-4">
+                    <li><strong>CVE-2020-25078 (CVSS: 7.5):</strong> This flaw affects D-Link DCS-2530L and DCS-2670L devices and could allow an attacker to remotely disclose the administrator password. A December 2024 advisory from the FBI specifically warned that HiatusRAT campaigns were actively scanning for this vulnerability.</li>
+                    <li><strong>CVE-2020-25079 (CVSS: 8.8):</strong> An authenticated command injection vulnerability in the cgi-bin/ddns_enc.cgi component of D-Link DCS-2530L and DCS-2670L devices. This could allow an authenticated attacker to execute arbitrary commands.</li>
+                    <li><strong>CVE-2020-40799 (CVSS: 8.8):</strong> This critical flaw affects the D-Link DNR-322L and involves a "download of code without an integrity check" vulnerability. It could enable an authenticated attacker to execute operating system-level commands on the device.</li>
+                </ul>
+            </section>
+
+            <section>
+                <p>
+                    It's crucial to note that while D-Link released patches for CVE-2020-25078 and CVE-2020-25079 in 2020, CVE-2020-40799 remains unpatched. The reason for this is that the affected DNR-322L model reached its end-of-life (EoL) status in November 2021. For anyone still using this device, the only recommended course of action is to discontinue its use and replace it immediately.
+                </p>
+                <p class="mt-4">
+                    CISA has mandated that all Federal Civilian Executive Branch (FCEB) agencies take the necessary mitigation steps for these vulnerabilities by August 26, 2025. However, this is a wake-up call for all organizations and individual users. If you are using any of the affected D-Link devices, it is imperative to apply the latest firmware updates or, if necessary, replace the device to protect your network from these actively exploited threats.
+                </p>
+            </section>
+        </article>
+    </div>
+</body>
+</html>

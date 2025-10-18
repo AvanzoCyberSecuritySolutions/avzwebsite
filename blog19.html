@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clickbait Alert! Your Password Manager Might Be Vulnerable to a New Clickjacking Attack</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans leading-relaxed text-gray-800">
+    <div class="max-w-3xl mx-auto px-4 py-12 bg-white shadow-lg rounded-lg my-8">
+        <!-- Article Header -->
+        <header class="mb-8 text-center">
+            <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-2 leading-tight">
+                Clickbait Alert! Your Password Manager Might Be Vulnerable to a New Clickjacking Attack
+            </h1>
+            <div class="text-sm text-gray-500 mt-4">
+                <span>Published: August 21, 2025</span>
+            </div>
+        </header>
+
+        <!-- Article Content -->
+        <article class="prose prose-lg max-w-none">
+            <!-- Lead Paragraph -->
+            <p class="text-xl font-medium text-gray-700 mb-6">
+                In the world of cybersecurity, we often hear about sophisticated attacks, but sometimes, the simplest tricks can be the most effective. A new security vulnerability, dubbed "DOM-based extension clickjacking," has been discovered that could put your stored credentials, two-factor authentication codes, and even credit card information at risk. This ingenious technique, revealed at the recent DEF CON 33 conference by security researcher Marek Tóth, preys on a user's trust and a browser extension's functionality.
+            </p>
+
+            <!-- Main Content Sections -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">What's the Gist of the Attack?</h2>
+                <p>
+                    At its core, this is a variation of a classic attack called clickjacking or "UI redressing." It's a method where a malicious actor tricks you into clicking on something you think is harmless, but is actually performing a hidden action. For example, you might click a "play video" button, but you're actually confirming a money transfer in a hidden window.
+                </p>
+                <p>
+                    Marek Tóth's new technique takes this a step further by targeting how browser extensions interact with web pages. Many popular extensions, especially password managers, inject their own user interface (UI) elements into the web page's Document Object Model (DOM). Think of the little pop-ups that appear to offer to auto-fill your login details.
+                </p>
+                <p>
+                    The attack works like this:
+                </p>
+                <ul class="list-disc list-inside space-y-2 mt-4">
+                    <li><strong>The Bait:</strong> An attacker creates a fake website with a seemingly innocent pop-up, like a cookie consent banner or a login screen.</li>
+                    <li><strong>The Hidden Trap:</strong> At the same time, the attacker embeds a hidden, invisible login form on the page. This form is made invisible by setting its opacity to zero, making it completely transparent to the user.</li>
+                    <li><strong>The Phishing:</strong> When you land on the page, your browser's password manager sees the hidden login form and, if auto-fill is enabled, it automatically fills in your credentials.</li>
+                    <li><strong>The Click:</strong> You, the user, see the pop-up and instinctively click on it to close or interact with it. Unbeknownst to you, this click is also triggering the auto-fill and sending your credentials from the hidden form to a remote server controlled by the attacker.</li>
+                </ul>
+                <p class="mt-4">
+                    This single, seemingly innocuous click is all it takes for the attacker to steal your sensitive data.
+                </p>
+            </section>
+
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Who's Affected?</h2>
+                <p>
+                    The research specifically targeted 11 popular password manager browser extensions, all of which were found to be vulnerable. These include:
+                </p>
+                <ul class="list-disc list-inside space-y-2 mt-4">
+                    <li>1Password</li>
+                    <li>iCloud Passwords</li>
+                    <li>Bitwarden</li>
+                    <li>Enpass</li>
+                    <li>LastPass</li>
+                    <li>LogMeOnce</li>
+                </ul>
+                <p class="mt-4">
+                    Collectively, these extensions have millions of users, highlighting the widespread potential for this vulnerability. According to the research, a single click could not only steal login credentials but also two-factor authentication codes (TOTP) and even credit card details.
+                </p>
+            </section>
+
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">What are the Vendors Doing?</h2>
+                <p>
+                    The good news is that this vulnerability was disclosed responsibly. However, as of the initial report, several vendors had not yet released a fix.
+                </p>
+                <ul class="list-disc list-inside space-y-2 mt-4">
+                    <li>Bitwarden, Enpass, and iCloud Passwords were reported to be actively working on a fix.</li>
+                    <li>1Password and LastPass initially categorized the issue as "informative."</li>
+                </ul>
+                <p class="mt-4">
+                    <strong>Update:</strong> Bitwarden has since released version 2025.8.0 to patch the vulnerability. This is a crucial reminder that it's important to keep your extensions and applications up to date.
+                </p>
+            </section>
+
+            <section>
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">What Can You Do to Protect Yourself?</h2>
+                <p>
+                    While we wait for all vendors to release a fix, there are some immediate steps you can take to protect your data:
+                </p>
+                <ul class="list-disc list-inside space-y-2 mt-4">
+                    <li><strong>Disable Auto-Fill:</strong> The simplest and most effective solution is to turn off the auto-fill feature in your password manager. Instead, use the copy/paste function to manually enter your credentials. This adds a small layer of friction but gives you complete control.</li>
+                    <li><strong>Configure "On Click" Site Access:</strong> If you use a Chromium-based browser (like Chrome, Brave, or Edge), you can change your extension settings to "on click." This prevents the extension from running on every website and requires you to manually click a button to enable its functionality on a specific page.</li>
+                    <li><strong>Be Skeptical of Pop-ups:</strong> Always be cautious when a website presents you with an unexpected pop-up. If something looks out of place, it's better to close the tab and navigate away.</li>
+                </ul>
+                <p class="mt-4">
+                    This new vulnerability is a stark reminder that even the tools we rely on for security can have their own weaknesses. By staying informed and taking a few simple precautions, you can significantly reduce your risk of becoming a victim of this clever new attack.
+                </p>
+            </section>
+        </article>
+    </div>
+</body>
+</html>
