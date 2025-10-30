@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sharp Rise in Automated Botnet Attacks Targeting PHP Servers and IoT Devices</title>
+  <meta name="description" content="Cybersecurity researchers report a surge in automated botnet attacks targeting PHP servers, IoT devices, and cloud gateways, driven by Mirai, Gafgyt, and Mozi botnets." />
+  <meta name="keywords" content="botnet attacks, PHP vulnerabilities, IoT security, Mirai, Gafgyt, Mozi, AISURU, TurboMirai, Qualys TRU, cybersecurity 2025" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans text-gray-800 leading-relaxed">
+  <div class="max-w-3xl mx-auto px-4 py-12">
+    <main class="bg-white shadow-lg rounded-lg overflow-hidden">
+      <!-- Header -->
+      <header class="px-6 py-10 text-center">
+        <h1 class="text-3xl md:text-4xl font-bold text-gray-900 leading-tight mb-3">
+          Sharp Rise in Automated Botnet Attacks Targeting PHP Servers and IoT Devices
+        </h1>
+        <p class="text-sm text-gray-600">Date: October 30, 2025</p>
+      </header>
+
+      <!-- Article Content -->
+      <article class="prose prose-lg max-w-none px-6 pb-10">
+        <p>
+          Cybersecurity researchers have warned about a major surge in automated botnet attacks aimed at PHP servers, IoT devices, and cloud gateways. 
+          The new wave of activity is primarily driven by well-known botnets such as <strong>Mirai</strong>, <strong>Gafgyt</strong>, and <strong>Mozi</strong>, 
+          according to a recent report from the <strong>Qualys Threat Research Unit (TRU)</strong>.
+        </p>
+
+        <h2>The Growing Threat</h2>
+        <p>
+          These botnets are exploiting known CVE vulnerabilities and cloud misconfigurations to compromise exposed systems and expand their malicious networks.
+          PHP servers have become prime targets due to their wide use in content management systems like <strong>WordPress</strong> and <strong>Craft CMS</strong>, 
+          often plagued by misconfigurations, outdated plugins, and insecure file storage.
+        </p>
+
+        <h2>Vulnerabilities Exploited</h2>
+        <p>Some of the key PHP-related vulnerabilities under attack include:</p>
+        <ul>
+          <li><strong>CVE-2017-9841</strong> – Remote code execution in PHPUnit</li>
+          <li><strong>CVE-2021-3129</strong> – Remote code execution in Laravel</li>
+          <li><strong>CVE-2022-47945</strong> – Remote code execution in ThinkPHP Framework</li>
+        </ul>
+        <p>
+          Researchers also spotted attempts using the query string 
+          <code>/?XDEBUG_SESSION_START=phpstorm</code> in HTTP requests — 
+          a sign that attackers are exploiting <strong>Xdebug</strong> to initiate debugging sessions in production environments.
+        </p>
+        <p>
+          Leaving debugging tools like Xdebug active in production can expose sensitive data or reveal application logic to attackers.
+        </p>
+
+        <h2>IoT Devices Under Siege</h2>
+        <p>
+          Beyond PHP servers, attackers are also targeting IoT systems and cloud services. Commonly exploited weaknesses include:
+        </p>
+        <ul>
+          <li><strong>CVE-2022-22947</strong> – RCE in Spring Cloud Gateway</li>
+          <li><strong>CVE-2024-3721</strong> – Command injection in TBK DVR-4104 and DVR-4216</li>
+          <li><strong>MVPower TV-7104HE DVR Misconfiguration</strong> – Allows unauthenticated command execution</li>
+        </ul>
+        <p>
+          The scanning and exploitation attempts are often traced back to major cloud infrastructures like <strong>AWS</strong>, 
+          <strong>Google Cloud</strong>, <strong>Microsoft Azure</strong>, and <strong>DigitalOcean</strong> — 
+          showing that attackers are abusing legitimate cloud platforms to hide their identities.
+        </p>
+
+        <h2>Low Skill, High Impact</h2>
+        <blockquote>
+          “Today’s threat actors don’t need to be highly sophisticated to be effective,” said Qualys.
+        </blockquote>
+        <p>
+          With access to readily available exploit kits, botnet frameworks, and scanning tools, even entry-level hackers can cause massive disruption.
+        </p>
+
+        <h2>How to Protect Your Systems</h2>
+        <p>Security experts recommend the following steps:</p>
+        <ul>
+          <li>Keep all devices and software up to date</li>
+          <li>Disable debug tools and development frameworks in production</li>
+          <li>Store secrets securely using AWS Secrets Manager or HashiCorp Vault</li>
+          <li>Restrict public access to cloud environments</li>
+        </ul>
+
+        <h2>The New Face of Botnets</h2>
+        <p>
+          According to <strong>James Maude</strong>, Field CTO at <strong>BeyondTrust</strong>, botnets are evolving beyond DDoS and cryptomining:
+        </p>
+        <blockquote>
+          “Botnets now play a critical role in identity-based attacks like credential stuffing and password spraying. 
+          They can even evade geolocation-based defenses by mimicking legitimate user activity.”
+        </blockquote>
+        <p>
+          By hijacking routers and IoT devices, attackers gain access to thousands of real IP addresses, 
+          helping them bypass security filters and login anomaly detection systems.
+        </p>
+
+        <h2>AISURU: The TurboMirai Botnet</h2>
+        <p>
+          In a related disclosure, <strong>NETSCOUT</strong> identified a new DDoS-for-hire botnet dubbed <strong>AISURU</strong>, 
+          which belongs to a new malware class called <strong>TurboMirai</strong>.
+        </p>
+        <p>
+          This botnet can launch massive DDoS attacks exceeding <strong>20 Tbps</strong>, leveraging consumer-grade routers, CCTV systems, and DVRs.
+        </p>
+        <p>
+          AISURU also includes a residential proxy network, allowing paying users to route their traffic through compromised devices. 
+          This provides anonymity, geographical masking, and the ability to blend with regular network activity — making detection much harder.
+        </p>
+
+        <h2>Final Thoughts</h2>
+        <p>
+          The rise of automated botnet attacks shows how easily threat actors can weaponize common misconfigurations and unpatched systems.
+        </p>
+        <p>
+          In 2025’s interconnected world, basic hygiene — like patching, restricting exposure, and securing credentials — remains the best defense.
+        </p>
+        <p>
+          As these botnets continue to evolve, so must our defenses.
+        </p>
+      </article>
+    </main>
+  </div>
+</body>
+</html>
