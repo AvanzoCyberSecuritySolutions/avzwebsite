@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Weekly Cybersecurity Recap – November 4, 2025</title>
+  <meta name="description" content="A summary of the week’s major cybersecurity developments, including Motex Lanscope flaw exploitation, TEE.Fail attack, and emerging global threats." />
+  <meta name="keywords" content="cybersecurity recap, Motex Lanscope, Gokcpdoor, TEE.Fail, ransomware, Herodotus, Qilin, cyber threats 2025, weekly security update" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans text-gray-800 leading-relaxed">
+  <div class="max-w-3xl mx-auto px-4 py-12">
+    <main class="bg-white shadow-lg rounded-lg overflow-hidden">
+      <!-- Header -->
+      <header class="px-6 py-10 text-center">
+        <h1 class="text-3xl md:text-4xl font-bold text-gray-900 leading-tight mb-3">
+          Weekly Cybersecurity Recap
+        </h1>
+        <p class="text-sm text-gray-600">Date: November 4, 2025</p>
+      </header>
+
+      <!-- Article Content -->
+      <article class="prose prose-lg max-w-none px-6 pb-10">
+        <p>
+          This week, the cybersecurity landscape showcased a surge in complex, fast-moving threats that tested the limits of trusted systems and secure infrastructures. From zero-day exploits and advanced phishing schemes to hardware-level vulnerabilities, threat actors demonstrated both speed and sophistication. No sector remained untouched — finance, cloud, critical infrastructure, and mobile ecosystems all faced high-impact attacks.
+        </p>
+        <p>
+          This summary highlights the most significant developments, newly discovered threats, and defensive insights from the week.
+        </p>
+
+        <h2>Threat of the Week: Motex Lanscope Flaw Exploited to Deploy Gokcpdoor</h2>
+        <p>
+          A suspected Chinese state-sponsored group, <strong>Tick</strong>, has been observed exploiting a critical vulnerability (<strong>CVE-2025-61932</strong>, CVSS 9.3) in Motex Lanscope Endpoint Manager to distribute a custom backdoor named <strong>Gokcpdoor</strong>. According to Sophos researchers, the attacks were limited and carefully aligned with the group’s espionage objectives, indicating a highly targeted campaign against specific sectors of interest.
+        </p>
+
+        <h2>Top Stories</h2>
+        <h3>TEE.Fail Side-Channel Attack Breaks Intel and AMD TEEs</h3>
+        <p>
+          A new physical side-channel attack dubbed <strong>TEE.Fail</strong> has successfully compromised the integrity of modern Trusted Execution Environments (TEEs) used by Intel and AMD. The exploit leverages deterministic encryption and DDR5 bus interposition to extract cryptographic secrets from Intel SGX/TDX and AMD SEV-SNP enclaves. While the attack requires physical access and kernel-level privileges, it highlights significant design concerns in next-generation hardware security.
+        </p>
+
+        <h3>Russian Hackers Breach Ukrainian Networks Using Legitimate Tools</h3>
+        <p>
+          Two Ukrainian organizations — a business services company and a local government agency — were infiltrated by suspected Russian threat actors employing living-off-the-land techniques. Instead of deploying custom malware, the attackers utilized legitimate administrative tools already present in the networks to maintain stealth and persistence. The incidents reinforce the growing shift toward low-footprint, stealthy intrusion methods.
+        </p>
+
+        <h3>North Korea Targets Web3 with GhostCall and GhostHire Campaigns</h3>
+        <p>
+          The <strong>BlueNoroff</strong> threat actor group (a sub-cluster of Lazarus Group) has reemerged with two advanced campaigns: <strong>GhostCall</strong> and <strong>GhostHire</strong>. These operations target Web3 developers and blockchain executives, using fake job offers and social engineering on platforms like LinkedIn and Telegram to deliver multi-stage malware. Kaspersky reports that BlueNoroff’s strategy has expanded from cryptocurrency theft to comprehensive data collection for supply-chain exploitation and secondary attacks.
+        </p>
+
+        <h3>New Android Banking Malware ‘Herodotus’ Mimics Human Behavior</h3>
+        <p>
+          A new Android banking trojan named <strong>Herodotus</strong> is drawing attention for its ability to simulate human typing behavior to evade behavioral detection. Distributed via SMS phishing, the malware overlays fake banking interfaces to steal credentials and intercepts OTPs. Its unique feature — mimicking real typing patterns — allows it to bypass heuristic detection mechanisms, posing a significant risk to mobile banking users.
+        </p>
+
+        <h3>Qilin Ransomware Adapts Linux Encryptors for Windows Attacks</h3>
+        <p>
+          The <strong>Qilin</strong> ransomware group has been observed leveraging Windows Subsystem for Linux (WSL) to execute Linux-based encryptors directly on Windows systems. This hybrid approach enables evasion of traditional endpoint protections. Trend Micro reported that over 700 victims across 62 countries have been impacted this year, solidifying Qilin’s position among the most active ransomware operators globally.
+        </p>
+
+        <h2>Trending Vulnerabilities (CVEs)</h2>
+        <p>
+          Threat actors continue to exploit newly disclosed vulnerabilities within hours of publication. The following CVEs are currently under active monitoring across the cybersecurity community:
+        </p>
+        <ul>
+          <li>CVE-2025-61932 — Motex Lanscope Endpoint Manager</li>
+          <li>CVE-2025-10680 — OpenVPN</li>
+          <li>CVE-2025-55752 / 55754 — Apache Tomcat</li>
+          <li>CVE-2025-52665 — Ubiquiti UniFi Access</li>
+          <li>CVE-2025-12044 / 11621 — HashiCorp Vault</li>
+          <li>CVE-2025-43995 — Dell Storage Manager</li>
+          <li>CVE-2025-10932 — Progress MOVEit Transfer</li>
+          <li>CVE-2025-5842 — Veeder-Root TLS4B System</li>
+          <li>CVE-2025-6325 / 6327 — Elementor Plugin Addons</li>
+        </ul>
+        <p>
+          Organizations are strongly advised to review, prioritize, and patch affected systems immediately to prevent potential exploitation.
+        </p>
+
+        <h2>Global Cyber Highlights</h2>
+        <h3>Canada Warns of Hacktivist Attacks on Critical Infrastructure</h3>
+        <p>
+          Canada’s national cyber agency issued a warning following multiple hacktivist-driven attacks on industrial control systems (ICS). Incidents included tampering with water pressure systems, ATG sensors in oil facilities, and grain silos, emphasizing the urgent need for improved ICS security controls and segmentation.
+        </p>
+
+        <h3>Kinsing Exploits Apache ActiveMQ for Cryptojacking</h3>
+        <p>
+          The <strong>Kinsing</strong> threat actor continues to exploit CVE-2023-46604 in Apache ActiveMQ, deploying XMRig miners and the Sharpire .NET backdoor. The campaign showcases extensive use of post-exploitation frameworks such as CobaltStrike, Meterpreter, and PowerShell Empire, demonstrating the actor’s sophistication in maintaining access.
+        </p>
+
+        <h3>Flaws in Confidential Computing Systems</h3>
+        <p>
+          Researchers disclosed two vulnerabilities (<strong>CVE-2025-59054</strong>, <strong>CVE-2025-58356</strong>) in eight confidential computing platforms, including Oasis Protocol, Phala Network, and Fortanix Salmiac, which could allow data extraction and tampering in encrypted environments. Partial mitigations have been released in cryptsetup v2.8.1.
+        </p>
+
+        <h3>LinkedIn Phishing Targets Financial Executives</h3>
+        <p>
+          Attackers are using LinkedIn direct messages to distribute phishing links disguised as executive meeting invitations. Victims are redirected to fraudulent Microsoft login pages with bot protection, making detection more difficult. This highlights a growing trend of bypassing traditional email-based phishing filters.
+        </p>
+
+        <h3>Malicious Visual Studio Code Extensions Identified</h3>
+        <p>
+          Security researchers discovered 12 malicious VS Code extensions designed to exfiltrate sensitive data and maintain persistent remote access. The campaign leveraged Unicode steganography within JavaScript projects to conceal payloads, underlining the risks associated with supply chain attacks in developer ecosystems.
+        </p>
+
+        <h3>Proton Launches Data Breach Observatory</h3>
+        <p>
+          <strong>Proton</strong>, a Swiss privacy firm, launched a new Data Breach Observatory, which monitors dark web leaks involving over 306 million records across 794 breaches. Notably, small and medium-sized businesses (SMBs) represented over 70% of these breaches due to limited cybersecurity defenses.
+        </p>
+
+        <h2>Law Enforcement Actions</h2>
+        <ul>
+          <li><strong>Russia:</strong> Arrested three individuals linked to the Meduza Infostealer operation.</li>
+          <li><strong>U.S.:</strong> Extradited a Ukrainian national associated with the Conti ransomware group.</li>
+        </ul>
+        <p>
+          These arrests mark significant steps toward disrupting organized cybercrime operations, although global ransomware ecosystems remain resilient.
+        </p>
+
+        <h2>Emerging Threats</h2>
+        <ul>
+          <li><strong>Tangerine Turkey:</strong> A cross-platform cryptomining campaign using VB and batch scripts to spread via infected USB drives.</li>
+          <li><strong>Hezi Rash:</strong> A Kurdish nationalist hacktivist collective responsible for over 350 DDoS attacks targeting global sites between August and October 2025.</li>
+          <li><strong>Lampion Stealer:</strong> New phishing campaigns in Brazil leveraging ClickFix-based HTML lures to distribute this long-running banking trojan.</li>
+        </ul>
+
+        <h2>Security Insight: Why Attack Surface Reduction Matters</h2>
+        <p>
+          The week’s events reinforce one key message: attack surface reduction (ASR) is more crucial than ever. In modern networks filled with unused domains, open ports, and orphaned accounts, attackers often exploit what’s already visible rather than discovering new vulnerabilities. Proactive asset management, regular exposure mapping, and smart defensive automation can dramatically cut risk without hindering operational agility.
+        </p>
+
+        <h2>Conclusion</h2>
+        <p>
+          The key takeaway from this week is clear: Cyber threats are evolving to appear ordinary — hidden in trusted applications, recruitment platforms, and legitimate tools. Defending against them requires more than antivirus or patching. It demands constant visibility, disciplined response, and forward-thinking defense.
+        </p>
+        <p>
+          Cybersecurity is not a product or a single solution — it’s a continuous process. Every login, update, and patch plays a part in keeping systems secure.
+        </p>
+      </article>
+    </main>
+  </div>
+</body>
+</html>

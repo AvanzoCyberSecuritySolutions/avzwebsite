@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Emergence of BankBot-YNRK and DeliveryRAT Android Trojans Targeting Financial Data</title>
+  <meta name="description" content="Cybersecurity researchers uncover BankBot-YNRK and DeliveryRAT Android trojans designed to steal sensitive financial and personal data from mobile devices." />
+  <meta name="keywords" content="Android malware, BankBot-YNRK, DeliveryRAT, mobile security, financial data theft, trojan, cybersecurity 2025, CYFIRMA, F6, Zimperium" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans text-gray-800 leading-relaxed">
+  <div class="max-w-3xl mx-auto px-4 py-12">
+    <main class="bg-white shadow-lg rounded-lg overflow-hidden">
+      <!-- Header -->
+      <header class="px-6 py-10 text-center">
+        <h1 class="text-3xl md:text-4xl font-bold text-gray-900 leading-tight mb-3">
+          Emergence of BankBot-YNRK and DeliveryRAT Android Trojans Targeting Financial Data
+        </h1>
+        <p class="text-sm text-gray-600">Date: November 3, 2025</p>
+      </header>
+
+      <!-- Article Content -->
+      <article class="prose prose-lg max-w-none px-6 pb-10">
+        <p>
+          Recent analyses by cybersecurity firms have uncovered two distinct Android malware families, <strong>BankBot-YNRK</strong> and <strong>DeliveryRAT</strong>, both designed to exfiltrate sensitive financial and personal data from compromised mobile devices. These malware variants demonstrate increasing sophistication in avoiding detection, maintaining persistence, and exploiting legitimate Android features for malicious purposes.
+        </p>
+
+        <h2>BankBot-YNRK Overview</h2>
+        <p>
+          The <strong>BankBot-YNRK</strong> malware family was analyzed by <strong>CYFIRMA</strong>, which examined three related samples. Each variant impersonates a legitimate Indonesian government application named <em>Identitas Kependudukan Digital</em> to deceive users into installation.
+        </p>
+        <p><strong>Associated APK package names:</strong></p>
+        <ul>
+          <li>com.westpacb4a.payqingynrk1b4a</li>
+          <li>com.westpacf78.payqingynrk1f78</li>
+          <li>com.westpac91a.payqingynrk191a</li>
+        </ul>
+
+        <h2>Evasion and Targeting Mechanisms</h2>
+        <p>
+          BankBot-YNRK incorporates several anti-analysis techniques, including:
+        </p>
+        <ul>
+          <li>Verification of execution within a real device by checking manufacturer and model identifiers.</li>
+          <li>Avoidance of emulated or virtualized environments commonly used by malware analysts.</li>
+          <li>Identification of specific device brands such as Oppo, Google Pixel, and Samsung, enabling device-specific functions.</li>
+        </ul>
+        <p>
+          These measures allow the malware to selectively execute on supported devices, reducing exposure and improving attack precision.
+        </p>
+
+        <h2>Persistence and Privilege Escalation</h2>
+        <p>
+          Once deployed, BankBot-YNRK communicates with a remote command-and-control (C2) server (<code>ping.ynrkone[.]top</code>) and uses Android’s <strong>JobScheduler</strong> service to maintain persistence following device restarts.
+        </p>
+        <p>
+          The malware also prompts the user to enable Accessibility Services, granting itself elevated privileges to perform a wide range of unauthorized operations.
+        </p>
+
+        <h2>Functional Capabilities</h2>
+        <p>
+          BankBot-YNRK supports numerous malicious operations, including:
+        </p>
+        <ul>
+          <li>Harvesting contacts, SMS messages, location data, clipboard content, and lists of installed applications.</li>
+          <li>Capturing screen content to reconstruct banking or financial app interfaces, enabling credential theft.</li>
+          <li>Redirecting incoming calls using MMI codes.</li>
+          <li>Impersonating legitimate applications such as Google News by modifying its icon and interface.</li>
+          <li>Executing overlay attacks that display false verification messages while silently requesting permissions and device administrator privileges.</li>
+          <li>Targeting a predefined list of 62 financial applications and several cryptocurrency wallets.</li>
+        </ul>
+
+        <h2>Android Version Impact</h2>
+        <p>
+          The malware primarily affects Android versions 13 and below. Beginning with Android 14, Google has implemented stricter permission controls that prevent accessibility services from automatically granting app privileges, effectively mitigating this attack vector.
+        </p>
+
+        <h2>DeliveryRAT Overview</h2>
+        <p>
+          The <strong>DeliveryRAT</strong> malware, analyzed by <strong>F6</strong>, is distributed under the guise of legitimate applications such as food delivery, banking, parcel tracking, and marketplace platforms. The campaign primarily targets Android users in Russia and has been active since mid-2024.
+        </p>
+        <p>
+          The distribution follows a <strong>Malware-as-a-Service (MaaS)</strong> model, managed through a Telegram bot referred to as “Bonvi Team.” Threat actors can purchase either APK packages or phishing links distributing the trojan.
+        </p>
+
+        <h2>Infection Vectors</h2>
+        <p>Victims are typically lured through:</p>
+        <ul>
+          <li>Fraudulent messages on Telegram or other social media platforms.</li>
+          <li>Fake online job postings or marketplace listings.</li>
+          <li>Links claiming to provide order tracking or delivery updates.</li>
+        </ul>
+        <p>
+          Once installed, the malware requests access to notifications and battery optimization settings to ensure continuous background operation.
+        </p>
+
+        <h2>Malicious Behavior</h2>
+        <p>
+          DeliveryRAT is capable of:
+        </p>
+        <ul>
+          <li>Accessing and exfiltrating SMS messages and call logs.</li>
+          <li>Hiding its application icon to evade detection by the user.</li>
+          <li>Executing distributed denial-of-service (DDoS) attacks by sending coordinated HTTP requests to attacker-controlled domains.</li>
+          <li>Initiating malicious activities through QR code manipulation.</li>
+          <li>Maintaining background persistence even when the screen is off or the app is not actively used.</li>
+        </ul>
+
+        <h2>Additional Findings: NFC-Based Financial Data Theft</h2>
+        <p>
+          A related investigation by <strong>Zimperium</strong> revealed over 760 Android applications misusing Near-Field Communication (NFC) features to illicitly obtain payment card data.
+        </p>
+        <p>
+          These applications impersonate financial institutions, prompt users to set them as the default payment method, and exploit <strong>Host-Based Card Emulation (HCE)</strong> to capture contactless payment data.
+        </p>
+        <p>
+          The stolen data is transmitted to attacker-controlled servers or messaging channels for fraudulent financial transactions.
+        </p>
+        <p>
+          Impersonated targets include approximately 20 banking and financial institutions across Russia, Brazil, Poland, the Czech Republic, and Slovakia.
+        </p>
+
+        <h2>Mitigation Recommendations</h2>
+        <p>To reduce exposure to mobile malware threats such as BankBot-YNRK and DeliveryRAT, users and organizations should adopt the following measures:</p>
+        <ul>
+          <li>Restrict installation of applications from third-party or unknown sources.</li>
+          <li>Review app permissions regularly, particularly accessibility and device administrator privileges.</li>
+          <li>Deploy mobile threat defense (MTD) or enterprise mobile security solutions.</li>
+          <li>Update Android devices to the latest version (preferably Android 14 or above).</li>
+          <li>Conduct security awareness training for users on phishing and malicious application risks.</li>
+          <li>Monitor network traffic for connections to known C2 infrastructure such as <code>ynrkone[.]top</code>.</li>
+        </ul>
+
+        <h2>Conclusion</h2>
+        <p>
+          The emergence of BankBot-YNRK and DeliveryRAT underscores the continued evolution of Android-based financial malware. Both families exhibit advanced evasion, persistence, and credential theft capabilities, posing a significant risk to individuals and financial institutions alike.
+        </p>
+        <p>
+          As mobile platforms become increasingly central to personal and enterprise financial operations, proactive security measures, policy enforcement, and user education remain critical components of defense.
+        </p>
+      </article>
+    </main>
+  </div>
+</body>
+</html>
