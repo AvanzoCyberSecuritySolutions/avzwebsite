@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Google Uncovers PROMPTFLUX: A Self-Modifying Malware Powered by Gemini AI</title>
+  <meta name="description" content="Google’s Threat Intelligence Group uncovers PROMPTFLUX, an AI-powered self-modifying malware leveraging Gemini to rewrite its own code and evade detection." />
+  <meta name="keywords" content="PROMPTFLUX, Gemini AI, Google Threat Intelligence Group, AI malware, self-modifying malware, metamorphic malware, cybersecurity 2025, AI threats" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans text-gray-800 leading-relaxed">
+  <div class="max-w-3xl mx-auto px-4 py-12">
+    <main class="bg-white shadow-lg rounded-lg overflow-hidden">
+      <!-- Header -->
+      <header class="px-6 py-10 text-center">
+        <h1 class="text-3xl md:text-4xl font-bold text-gray-900 leading-tight mb-3">
+          Google Uncovers PROMPTFLUX: A Self-Modifying Malware Powered by Gemini AI
+        </h1>
+        <p class="text-sm text-gray-600">Date: November 06, 2025</p>
+      </header>
+
+      <!-- Article Content -->
+      <article class="prose prose-lg max-w-none px-6 pb-10">
+        <p>
+          Google’s Threat Intelligence Group (<strong>GTIG</strong>) has uncovered an experimental malware strain named <strong>PROMPTFLUX</strong>, which introduces a new and concerning trend in cyber threats: malware that uses AI to rewrite its own code automatically to evade detection.
+        </p>
+
+        <h2>What Makes PROMPTFLUX Different?</h2>
+        <p>
+          PROMPTFLUX is written in VBScript and integrates directly with Google’s <strong>Gemini AI</strong> model using a hard-coded API key. The malware communicates with the model to request real-time code obfuscation and evasion techniques. This allows the malware to:
+        </p>
+        <ul>
+          <li>Rewrite itself on demand</li>
+          <li>Avoid signature-based antivirus detection</li>
+          <li>Continuously change its executable characteristics</li>
+        </ul>
+        <p>
+          This process is handled by a component referred to as <strong>“Thinking Robot.”</strong> It regularly prompts Gemini to regenerate portions — or even the entirety — of the malware’s code.
+        </p>
+        <p>
+          In some variants, PROMPTFLUX is configured to rewrite its entire source code every hour, instructing Gemini to act as an “expert VBScript obfuscator.”
+        </p>
+
+        <h2>Persistence and Self-Propagation</h2>
+        <p>
+          PROMPTFLUX stores its updated versions in the Windows Startup folder to run automatically upon reboot. It can also attempt to spread by copying itself to:
+        </p>
+        <ul>
+          <li>Removable drives</li>
+          <li>Mapped network shares</li>
+        </ul>
+        <p>
+          Although some self-modification functions are currently commented out, the logging behavior (<code>%TEMP%\thinking_robot_log.txt</code>) clearly shows ongoing development toward metamorphic malware — malware that continually evolves to evade detection.
+        </p>
+        <p>
+          GTIG believes PROMPTFLUX is still in a testing phase and does not yet contain full capabilities to compromise systems at scale. However, its underlying mechanism signals a significant evolution in threat actor behavior.
+        </p>
+
+        <h2>Part of a Bigger Pattern: AI-Augmented Malware Ecosystems</h2>
+        <p>
+          PROMPTFLUX is not an isolated case. GTIG reports several other malware families incorporating LLM-driven behaviors, including:
+        </p>
+        <ul>
+          <li><strong>FRUITSHELL:</strong> A PowerShell reverse shell that embeds prompts to evade LLM-based detection.</li>
+          <li><strong>PROMPTLOCK:</strong> A cross-platform ransomware written in Go that generates and executes malicious Lua scripts using an LLM.</li>
+          <li><strong>PROMPTSTEAL (LAMEHUG):</strong> Used by Russian APT28 to dynamically generate malicious commands through Qwen2.5-Coder.</li>
+          <li><strong>QUIETVAULT:</strong> A JavaScript credential stealer targeting GitHub and NPM developer tokens.</li>
+        </ul>
+
+        <h2>State-Backed Abuse of Gemini</h2>
+        <p>
+          Google has observed threat actors from China, Iran, and North Korea misusing Gemini to assist operations such as:
+        </p>
+        <ul>
+          <li>Crafting phishing lures</li>
+          <li>Designing malware components</li>
+          <li>Generating code for lateral movement and data exfiltration</li>
+          <li>Conducting reconnaissance and infrastructure setup</li>
+        </ul>
+        <p>
+          Some actors reportedly impersonated students participating in Capture-The-Flag competitions to bypass model safety controls and obtain exploit guidance.
+        </p>
+
+        <h2>Why This Matters</h2>
+        <p>
+          PROMPTFLUX demonstrates a shift from using AI as a helper to embedding AI inside malware for continuous adaptation. This enables:
+        </p>
+        <ul>
+          <li>Dynamic evasion</li>
+          <li>Lower barriers to sophisticated attack development</li>
+          <li>Scalable malicious operations</li>
+        </ul>
+        <p>
+          Google warns that AI-driven malware will soon become the norm, not the exception.
+        </p>
+
+        <h2>Defensive Recommendations</h2>
+        <p>
+          Organizations should begin adapting detection strategies now:
+        </p>
+        <ul>
+          <li>Monitor unusual outbound requests to LLM API endpoints.</li>
+          <li>Implement strict API key management and rotation policies.</li>
+          <li>Track changes to Windows Startup and script execution behavior.</li>
+          <li>Harden removable drive and network share write permissions.</li>
+          <li>Educate teams on prompt-based social engineering and AI misuse.</li>
+        </ul>
+
+        <h2>Conclusion</h2>
+        <p>
+          PROMPTFLUX represents the next stage of malware evolution — self-modifying, AI-enhanced, and increasingly autonomous. While still in development, the underlying technique is a preview of future threat landscapes where malware is not just coded, but co-designed in real time by AI.
+        </p>
+        <p>
+          Security teams should treat AI-misuse detection as a core security capability going forward.
+        </p>
+      </article>
+    </main>
+  </div>
+</body>
+</html>
