@@ -942,10 +942,17 @@ Think proactive, think safe, think beyond passwords.
                 
                 <!-- Product Container -->
                 <div class="product-item active" id="product-container">
-                    <div class="img-one overflow-hidden rounded-20 position-relative reveal left">
-                        <img src="assets/img/main-images/IMAGE-removebg-preview.png" alt="product-img"
-                            class="img-fluid w-100 rounded-20" id="product-image">
-                    </div>
+<div class="img-one overflow-hidden rounded-20 position-relative reveal left">
+    <a href="https://avanzosolutions.com/cybersol.html" 
+       target="_blank" 
+       id="product-link">
+        <img src="assets/img/main-images/IMAGE-removebg-preview.png"
+             alt="cybersol-img"
+             class="img-fluid w-100 rounded-20"
+             id="product-image">
+    </a>
+</div>
+
                     <div class="d-flex gap-3 mt-4">
                         <a href="assets/img/pdf/cybersol.pdf" target="_blank" class="download-btn flex-1">Download brochure <br>for CyberSol</a>
                         <a href="assets/img/pdf/Myciso Brochure.pdf" target="_blank" class="download-btn flex-1">Download brochure <br>for MyCiso</a>
@@ -971,87 +978,90 @@ let currentProduct = 0;
 let isAutoPlaying = true;
 let autoplayInterval;
 let progressInterval;
-const AUTOPLAY_DURATION = 5000; // 5 seconds
+const AUTOPLAY_DURATION = 5000;
 
-const productImages = [
-    'assets/img/main-images/IMAGE-removebg-preview.png', // CyberSol image
-    'assets/img/main-images/Picture.png' // MyCiso image - update path as needed
+// Product data (image + link)
+const products = [
+    {
+        img: 'assets/img/main-images/IMAGE-removebg-preview.png',
+        alt: 'cybersol-img',
+        link: 'https://avanzosolutions.com/cybersol.html'
+    },
+    {
+        img: 'assets/img/main-images/Picture.png',
+        alt: 'myciso-img',
+        link: 'https://myciso.avanzosolutions.in/'
+    }
 ];
 
 function switchProduct(index) {
     if (index === currentProduct) return;
-    
+
     const indicators = document.querySelectorAll('.indicator-dot');
     const productImage = document.getElementById('product-image');
-    
-    // Update indicators
+    const productLink = document.getElementById('product-link');
+
     indicators[currentProduct].classList.remove('active');
     indicators[index].classList.add('active');
-    
-    // Update image with fade effect
+
     productImage.style.opacity = '0';
+
     setTimeout(() => {
-        productImage.src = productImages[index];
-        productImage.alt = index === 0 ? 'cybersol-img' : 'myciso-img';
+        productImage.src = products[index].img;
+        productImage.alt = products[index].alt;
+        productLink.href = products[index].link;
         productImage.style.opacity = '1';
     }, 400);
-    
+
     currentProduct = index;
-    
-    // Reset progress bar
     resetProgressBar();
 }
 
 function startAutoplay() {
-    if (autoplayInterval) clearInterval(autoplayInterval);
-    if (progressInterval) clearInterval(progressInterval);
-    
+    clearInterval(autoplayInterval);
+    clearInterval(progressInterval);
+
     autoplayInterval = setInterval(() => {
         if (isAutoPlaying) {
-            const nextProduct = (currentProduct + 1) % 2; // Only 2 products
-            switchProduct(nextProduct);
+            const next = (currentProduct + 1) % products.length;
+            switchProduct(next);
         }
     }, AUTOPLAY_DURATION);
-    
+
     startProgressBar();
 }
 
 function startProgressBar() {
     const progressBar = document.getElementById('progressBar');
     let progress = 0;
-    
+
     progressInterval = setInterval(() => {
         if (isAutoPlaying) {
             progress += 100 / (AUTOPLAY_DURATION / 100);
             progressBar.style.width = Math.min(progress, 100) + '%';
-            
-            if (progress >= 100) {
-                progress = 0;
-            }
+            if (progress >= 100) progress = 0;
         }
     }, 100);
 }
 
 function resetProgressBar() {
-    const progressBar = document.getElementById('progressBar');
-    progressBar.style.width = '0%';
+    document.getElementById('progressBar').style.width = '0%';
 }
 
-// Initialize
+// Init
 startAutoplay();
 
-// Add click handlers for indicators
+// Indicator clicks
 document.querySelectorAll('.indicator-dot').forEach((dot, index) => {
     dot.addEventListener('click', () => switchProduct(index));
 });
 
 // Pause on hover
 const container = document.querySelector('.feature-image');
+
 container.addEventListener('mouseenter', () => {
-    if (isAutoPlaying) {
-        isAutoPlaying = false;
-        if (progressInterval) clearInterval(progressInterval);
-    }
+    isAutoPlaying = false;
+    clearInterval(progressInterval);
 });
 
 container.addEventListener('mouseleave', () => {
@@ -1059,6 +1069,7 @@ container.addEventListener('mouseleave', () => {
     startProgressBar();
 });
 </script>
+
       <!-- <div class="container">
         <div class="row">
            <div class="col-lg-6">
