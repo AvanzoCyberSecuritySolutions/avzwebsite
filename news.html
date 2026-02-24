@@ -176,57 +176,114 @@
     </div>
   </div>
   <div class="container text-center">
-    <h1 class="banner-title mb-4 split-text right">Updates about the company</h1>
+    <h1 class="banner-title mb-4 split-text right">Latest Cybersecurity News & Alerts</h1>
   </div>
 
 <div class="container mt-5">
-  <div class="row">
-    <!-- Image 1 -->
-    <div class="col-md-6 mb-4 text-center">
-      <img src="assets/img/updates/1.webp" alt="Blog 1" class="img-fluid rounded blog-img">
-      <p class="mt-2">This is the description for Blog 1</p>
-    </div>
-
-    <!-- Image 2 -->
-    <div class="col-md-6 mb-4 text-center">
-      <img src="assets/img/updates/2.webp" alt="Blog 2" class="img-fluid rounded blog-img">
-      <p class="mt-2">This is the description for Blog 2</p>
-    </div>
-    
-<span class="custom-shadow position-absolute rounded-pill"></span>
-  
-    <!-- Image 3 -->
-    <div class="col-md-6 mb-4 text-center">
-      <img src="assets/img/updates/3.avif" alt="Blog 3" class="img-fluid rounded blog-img">
-      <p class="mt-2">This is the description for Blog 3</p>
-    </div>
-
-    <!-- Image 4 -->
-    <div class="col-md-6 mb-4 text-center">
-      <img src="assets/img/updates/4.avif" alt="Blog 4" class="img-fluid rounded blog-img">
-      <p class="mt-2">This is the description for Blog 4</p>
-    </div>
-
-    <!-- Image 5 -->
-    <div class="col-md-6 mb-4 text-center">
-      <img src="assets/img/updates/5.avif" alt="Blog 5" class="img-fluid rounded blog-img">
-      <p class="mt-2">This is the description for Blog 5</p>
-    </div>
-
-    <!-- Image 6 -->
-    <div class="col-md-6 mb-4 text-center">
-      <img src="assets/img/updates/6.avif" alt="Blog 6" class="img-fluid rounded blog-img">
-      <p class="mt-2">This is the description for Blog 6</p>
-    </div>
+  <style>
+    .blog-card-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      justify-content: center;
+      margin-top: 40px;
+    }
+    .blog-card {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      overflow: hidden;
+      width: 320px;
+      margin-bottom: 24px;
+      display: flex;
+      flex-direction: column;
+      transition: box-shadow 0.2s;
+    }
+    .blog-card:hover {
+      box-shadow: 0 4px 16px rgba(0,0,0,0.16);
+    }
+    .blog-card-img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .blog-card-desc {
+      padding: 16px;
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: #222;
+    }
+    .view-more-btn {
+      display: block;
+      margin: 32px auto 0 auto;
+      padding: 12px 32px;
+      font-size: 1rem;
+      border-radius: 8px;
+      background: #222;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .view-more-btn:hover {
+      background: #444;
+    }
+  </style>
+  <div class="blog-card-grid">
+    <a href="newssubpages.html" class="blog-card-link">
+      <div class="blog-card">
+        <img src="assets/img/main-images/new1.jpeg" alt="News Image 1" class="blog-card-img">
+        <div class="blog-card-desc">Cyber Awareness Alert – Outdated Server Risk</div>
+      </div>
+    </a>
+    <a href="newssubpages1.html" class="blog-card-link">
+      <div class="blog-card">
+        <img src="assets/img/main-images/news2.jpeg" alt="News Image 2" class="blog-card-img">
+        <div class="blog-card-desc">FAKE HEALTH DEPARTMENT CALL FRAUD – STAY ALERT!</div>
+      </div>
+    </a>
+    <a href="newssubpages2.html" class="blog-card-link">
+      <div class="blog-card">
+        <img src="assets/img/main-images/news3.jpeg" alt="News Image 3" class="blog-card-img">
+        <div class="blog-card-desc">WHATSAPP ALERT: ZERO-CLICK SPYWARE RISK</div>
+      </div>
+    </a>
+    <a href="newssubpages3.html" class="blog-card-link">
+      <div class="blog-card">
+        <img src="assets/img/main-images/news4.jpeg" alt="News Image 4" class="blog-card-img">
+        <div class="blog-card-desc"> Cybercrime Arrest Update – Kerala / Bengaluru</div>
+      </div>
+    </a>
+    <a href="newssubpages5.html" class="blog-card-link">
+      <div class="blog-card">
+        <img src="assets/img/main-images/news5.jpeg" alt="News Image 5" class="blog-card-img">
+        <div class="blog-card-desc">Cyber Law in Action | Kerala</div>
+      </div>
+    </a>
+    <a href="newssubpages6.html" class="blog-card-link">
+      <div class="blog-card">
+        <img src="assets/img/main-images/news6.jpeg" alt="News Image 6" class="blog-card-img">
+        <div class="blog-card-desc"> Social Media Safety Alert | Kerala</div>
+      </div>
+    </a>
+      <!-- .blog-card-link {
+        text-decoration: none;
+        color: inherit;
+      }
+      .blog-card-link:focus .blog-card,
+      .blog-card-link:hover .blog-card {
+        box-shadow: 0 4px 16px rgba(0,0,0,0.16);
+        outline: none;
+      } -->
   </div>
 
-  <div class="input-container">
+  <!-- <div class="input-container">
     <input type="text" class="input-line" placeholder="Enter your name" />
     <input type="text" class="input-line" placeholder="Email address" />
     <input type="text" class="input-line" placeholder="Phone number" />
     <input type="text" class="input-line" placeholder="City" />
     <input type="text" class="input-line" placeholder="Message or note" />
-  </div>
+  </div> -->
   
   <!-- View More Button -->
   <div class="banner-buttons text-center mt-4">
