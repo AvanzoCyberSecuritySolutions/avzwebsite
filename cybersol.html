@@ -52,11 +52,9 @@
                     In a world where information is the currency of the future, securing your business against cyber threats is not just a choice; it's a necessity. Avanzo Cyber Security Solutions proudly presents CyberSol.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="assets/images/CyberSol brochure.pdf" target="_blank">
-                        <button class="bg-primary text-white px-8 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors">
-                            Explore CyberSol
-                        </button>
-                    </a>
+                    <button onclick="openPdfModal()" class="bg-primary text-white px-8 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors shadow-lg hover:shadow-xl hover:-translate-y-0.5 transform duration-200">
+                        Explore CyberSol
+                    </button>
 
                     <a href="contact.html" target="_blank">
                         <button class="border border-purplegray text-purplegray px-8 py-3 rounded-lg font-semibold hover:bg-highlight/10 transition-colors">
@@ -376,6 +374,72 @@
                 </div>
             </div>
         </footer>
+
+        <!-- PDF Modal -->
+        <div id="pdfModal" class="fixed inset-0 z-[100] hidden items-center justify-center transition-all duration-300 opacity-0 pointer-events-none">
+            <!-- Backdrop -->
+            <div class="absolute inset-0 bg-gray-900/80 backdrop-blur-sm transition-opacity" onclick="closePdfModal()"></div>
+            
+            <!-- Modal Content -->
+            <div class="relative bg-white rounded-2xl shadow-2xl w-[98%] max-w-7xl h-[96vh] flex flex-col transform scale-95 transition-transform duration-300" id="pdfModalContent">
+                
+                <!-- Header -->
+                <div class="flex justify-between items-center px-6 py-4 border-b border-gray-100 bg-gray-50/50 rounded-t-2xl">
+                    <div class="flex items-center space-x-3">
+                        <div class="p-2 bg-primary/10 rounded-lg">
+                            <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9l6 4.5-6 4.5z"/></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 font-sans">CyberSol Official Brochure</h3>
+                    </div>
+                    
+                    <div class="flex items-center space-x-3">
+                        <!-- Download Button -->
+                        <a href="assets/img/pdf/Cybersol%20brochure%20Final%20Corrected.pdf" download class="flex items-center space-x-2 px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-lg text-sm font-semibold transition-colors">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                            <span>Download</span>
+                        </a>
+                        
+                        <!-- Close Button -->
+                        <button onclick="closePdfModal()" class="p-2 text-gray-400 hover:text-gray-600 hover:bg-gray-100 rounded-full transition-colors focus:outline-none">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- PDF iframe -->
+                <div class="flex-grow p-0 overflow-hidden rounded-b-2xl bg-gray-100">
+                    <iframe src="assets/img/pdf/Cybersol%20brochure%20Final%20Corrected.pdf#toolbar=0" class="w-full h-full border-0"></iframe>
+                </div>
+            </div>
+        </div>
+
     </div>
+
+    <!-- Scripts -->
+    <script>
+        function openPdfModal() {
+            const modal = document.getElementById('pdfModal');
+            const content = document.getElementById('pdfModalContent');
+            modal.classList.remove('hidden');
+            // Trigger reflow
+            void modal.offsetWidth;
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+            modal.classList.add('flex');
+            content.classList.remove('scale-95');
+            content.classList.add('scale-100');
+        }
+
+        function closePdfModal() {
+            const modal = document.getElementById('pdfModal');
+            const content = document.getElementById('pdfModalContent');
+            modal.classList.add('opacity-0', 'pointer-events-none');
+            content.classList.remove('scale-100');
+            content.classList.add('scale-95');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            }, 300);
+        }
+    </script>
 </body>
 </html>
