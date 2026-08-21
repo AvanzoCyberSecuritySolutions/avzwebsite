@@ -294,14 +294,25 @@
           <a href="about.html" class="text-decoration-none text-dark d-block mb-1">About</a>
           <a href="blog.html" class="text-decoration-none text-dark d-block mb-3">Blogs & News</a>
 
-          <input type="text" class="form-control form-control-sm mb-2" placeholder="newsletters" style="background-color: #f5f5f5; font-size: 0.85rem;">
+          <form class="newsletter-form" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="fd227d2d-c9a6-468c-980e-90b312f8ec51">
+            <input type="hidden" name="subject" value="New newsletter subscription - avanzoglobal.com">
+            <input type="hidden" name="from_name" value="Avanzo Global Newsletter">
+            <label for="newsletter-email-footer" class="visually-hidden">Email address</label>
+            <input type="email" id="newsletter-email-footer" name="email" class="form-control form-control-sm mb-2"
+                   placeholder="Your email address" required
+                   style="background-color: #f5f5f5; font-size: 0.85rem;">
 
-          <div>
-            <span class="text-violet fw-bold" style="font-size: 0.9rem;">Subscribe</span>
-            <span class="d-inline-flex align-items-center ms-3">
-              <img class="ms-2" src="assets/img/main-images/Arrow 18.png" alt="Arrow" style="height:16px;">
-            </span>
-          </div>
+            <div>
+              <button type="submit" class="newsletter-submit border-0 bg-transparent p-0 d-inline-flex align-items-center">
+                <span class="text-violet fw-bold" style="font-size: 0.9rem;">Subscribe</span>
+                <span class="d-inline-flex align-items-center ms-3">
+                  <img class="ms-2" src="assets/img/main-images/Arrow 18.png" alt="" style="height:16px;">
+                </span>
+              </button>
+            </div>
+            <div class="newsletter-message mt-2" style="font-size: 0.8rem;" role="status" aria-live="polite"></div>
+          </form>
         </small>
       </div>
 
@@ -404,5 +415,36 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 </script>
   
+
+<!-- Newsletter subscription (web3forms) -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll(".newsletter-form").forEach(function (form) {
+    form.addEventListener("submit", async function (e) {
+      e.preventDefault();
+      var msg = form.querySelector(".newsletter-message");
+      var btn = form.querySelector(".newsletter-submit");
+      msg.innerHTML = "";
+      btn.disabled = true;
+      try {
+        var response = await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          body: new FormData(form)
+        });
+        if (response.ok) {
+          form.reset();
+          msg.innerHTML = "<span style='color:green;'>Thank you! You are subscribed.</span>";
+        } else {
+          msg.innerHTML = "<span style='color:red;'>There was an error. Please try again later.</span>";
+        }
+      } catch (err) {
+        msg.innerHTML = "<span style='color:red;'>There was an error. Please try again later.</span>";
+      } finally {
+        btn.disabled = false;
+      }
+    });
+  });
+});
+</script>
 </body>
 </html>
