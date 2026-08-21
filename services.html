@@ -237,7 +237,36 @@
 
 
   
+<div class="container text-center mt-5 position-relative" style="z-index: 10;">
+  <style>
+    .main-switch-btn {
+      padding: 8px 24px;
+      border-radius: 20px;
+      font-family: Montserrat, sans-serif;
+      font-size: 16px;
+      border: 1px solid transparent;
+      background: transparent;
+      color: #333;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .main-switch-btn.active {
+      background: #FFFFFF;
+      box-shadow: inset 0px 0px 7px 0px rgba(0,0,0,0.25);
+      border: 1px solid #ddd;
+      font-weight: 600;
+    }
+    .main-switch-btn:hover:not(.active) {
+      background: rgba(0,0,0,0.05);
+    }
+  </style>
+  <div class="d-flex gap-3 justify-content-center my-4">
+    <button class="main-switch-btn active" data-main-target="section-cybersol">CyberSol</button>
+    <button class="main-switch-btn" data-main-target="section-myciso">MyCISO</button>
+  </div>
+</div>
 
+<div id="section-cybersol">
 <div id="content-default" class="content-box">
 <section class="ep-banner-section position-relative overflow-hidden custom-wrapper-hover">  
   <div class="container text-center">
@@ -533,7 +562,94 @@ Welcome to <b> CyberSol Pro+</b>, the pinnacle of cybersecurity sophistication b
 
 
 
-<section">
+</div> <!-- End section-cybersol -->
+
+<!-- MyCISO Section Start -->
+<div id="section-myciso" style="display: none;">
+<section class="ep-banner-section position-relative overflow-hidden custom-wrapper-hover">  
+  <div class="container text-center">
+    <h1 class="banner-title mb-4 split-text right">MyCISO – Intelligent Cybersecurity Management</h1>
+    <br><br>
+    <p class="mb-4" style="font-size: 1rem; color: #000;">
+      At AVZ, we believe effective cybersecurity requires more than just protection—it requires continuous visibility, structured management, and informed decision-making. <b>MyCISO</b> is a comprehensive cybersecurity management platform designed to simplify and strengthen the way organizations manage their security, risk, and compliance.
+    </p>
+    <p class="mb-4" style="font-size: 1rem; color: #000;">
+      From incident management and risk assessments to compliance tracking, policy management, security awareness, and audit readiness, MyCISO brings critical cybersecurity operations together through a unified dashboard. With intelligent workflows, real-time insights, and automated processes, it helps organizations reduce manual effort, identify risks, and maintain a proactive security posture.
+    </p>
+    <p class="mb-0" style="font-size: 1rem; color: #000;">
+      MyCISO empowers businesses to move from reactive security management to a <b>structured, measurable, and future-ready cybersecurity strategy</b>, providing the visibility and control needed to build a resilient digital environment.
+    </p>
+  </div>
+  <span class="custom-shadow1 position-absolute rounded-pill"></span>
+</section>
+
+<section class="py-5 position-relative">
+  <span class="custom-shadow3 position-absolute rounded-pill"></span>
+  <div class="container my-5">
+    
+    <!-- Row 1 -->
+    <div class="row align-items-start mb-5">
+      <div class="col-md-6 mb-4">
+        <div class="rectangle-image-box mx-auto d-flex align-items-center justify-content-center overflow-hidden">
+          <img src="assets/img/features/3.avif" style="width: 100%; height: 100%; object-fit: cover; border-radius: 47px;" alt="MyCISO Management">
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="feature-heading ms-auto" style="text-align: right;">Visibility</div>
+        <div class="feature-paragraph1 ms-auto" style="text-align: left;">
+          <h4>Centralized Cybersecurity Management</h4>
+          <p>MyCISO brings your organization’s critical security operations together in one centralized platform. From incidents and risks to compliance and audits, security teams gain a unified view of their cybersecurity posture with real-time insights and streamlined workflows.</p>
+          <br>
+          <h4>Risk & Compliance Intelligence</h4>
+          <p>Identify vulnerabilities, assess organizational risks, track compliance requirements, and perform gap analysis through an integrated risk and compliance management system. MyCISO helps organizations stay prepared for evolving regulatory and cybersecurity requirements.</p>
+        </div>
+      </div>
+    </div>
+    
+    <span class="custom-shadow position-absolute rounded-pill"></span>
+    <span class="custom-shadow4 position-absolute rounded-pill"></span>
+
+    <!-- Row 2 -->
+    <div class="row align-items-start flex-md-row-reverse mb-5">
+      <div class="col-md-6">
+        <div class="rectangle-image-box mx-auto d-flex align-items-center justify-content-center overflow-hidden">
+          <img src="assets/img/features/4.avif" style="width: 100%; height: 100%; object-fit: cover; border-radius: 47px;" alt="MyCISO Operations">
+        </div>
+      </div>
+      <div class="col-md-6 mb-4">
+        <div class="feature-heading" style="text-align: left;">Control</div>
+        <div class="feature-paragraph2" style="text-align: left;">
+          <h4>Incident & Policy Management</h4>
+          <p>Manage cybersecurity incidents through structured workflows with real-time tracking and automated classification. Centralize security policies, standards, and compliance mappings while maintaining visibility throughout the policy lifecycle.</p>
+          <br>
+          <h4>Security Awareness & Audit Readiness</h4>
+          <p>Strengthen your human layer through interactive security awareness training, phishing simulations, and certification tracking. MyCISO also simplifies audit preparation through centralized evidence management, finding tracking, and automated documentation.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 3 -->
+    <div class="row align-items-start">
+      <div class="col-md-6 mb-4">
+        <div class="rectangle-image-box mx-auto d-flex align-items-center justify-content-center overflow-hidden">
+          <img src="assets/img/main-images/myciso png.png" style="width: 100%; height: 100%; object-fit: contain; border-radius: 47px; background: #f8f9fa;" alt="MyCISO Dashboard">
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="feature-heading ms-auto" style="text-align: right;">Intelligence</div>
+        <div class="feature-paragraph1 ms-auto" style="text-align: left;">
+          <h4>Intelligent Security Operations</h4>
+          <p>With a unified dashboard, advanced analytics, and automated workflows, MyCISO reduces manual security processes and provides actionable insights for better cybersecurity decision-making. It enables organizations to build a proactive, measurable, and resilient security program.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>  
+</section>
+</div>
+<!-- MyCISO Section End -->
+
+<section>
   <div class="container text-center">
     <h1 class="banner-title mb-4 split-text right">Secure Your Digital Future — Schedule a Demo with AVZ</h1>
   </div>
@@ -821,6 +937,26 @@ Certification          </div>
   const timelineSection = document.querySelector('.timeline-section');
   observer.observe(timelineSection);
 </script>
+  <script>
+    document.querySelectorAll('.main-switch-btn').forEach(button => {
+      button.addEventListener('click', function () {
+        const targetId = this.getAttribute('data-main-target');
+
+        // Hide both main sections
+        document.getElementById('section-cybersol').style.display = 'none';
+        document.getElementById('section-myciso').style.display = 'none';
+
+        // Show the targeted content
+        document.getElementById(targetId).style.display = 'block';
+
+        // Update button styles
+        document.querySelectorAll('.main-switch-btn').forEach(btn => {
+          btn.classList.remove('active');
+        });
+        this.classList.add('active');
+      });
+    });
+  </script>
     <script>
   const timelineDots = document.querySelector('.timeline-dots');
   const scrollAmount = 200; // px to scroll on each click
