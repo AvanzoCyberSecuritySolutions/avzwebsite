@@ -59,7 +59,21 @@
 
 @media (max-width: 1199px) {
   .lock-svg {
-    max-width: 500px;
+    max-width: 380px;
+  }
+  .ep-banner-section {
+    min-height: auto !important;
+    padding-top: 100px;
+    padding-bottom: 40px;
+  }
+  .ep-banner-section .banner-text {
+    padding: 20px 0 !important;
+  }
+}
+
+@media (max-width: 1100px) {
+  .lock-svg {
+    max-width: 320px;
   }
 }
 
@@ -85,6 +99,38 @@
 @media (max-width: 575px) {
   .lock-svg {
     max-width: 250px;
+  }
+}
+
+/* Short viewport height (laptop screens) */
+@media (max-height: 800px) and (min-width: 768px) {
+  .ep-banner-section {
+    min-height: auto !important;
+    padding-top: 90px;
+    padding-bottom: 30px;
+  }
+  .lock-svg {
+    max-width: 280px;
+  }
+  .ep-banner-section .banner-text {
+    padding: 15px 0 !important;
+  }
+  .banner-title {
+    font-size: 28px !important;
+    line-height: 1.2;
+  }
+}
+
+@media (max-height: 650px) and (min-width: 768px) {
+  .lock-svg {
+    max-width: 220px;
+  }
+  .banner-title {
+    font-size: 24px !important;
+  }
+  .ep-banner-section .banner-text p {
+    font-size: 13px;
+    margin-bottom: 8px;
   }
 }
 
@@ -231,7 +277,6 @@
     }
     .ep-banner-section {
       padding-bottom: 5rem;
-      overflow: visible !important;
     }
     .banner-text {
       text-align: left !important;

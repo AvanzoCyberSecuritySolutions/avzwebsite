@@ -1125,9 +1125,12 @@ p {
 }
 .ep-banner-section {
   padding-top: 80px;
-  padding-bottom: 17px;
+  padding-bottom: 40px;
   background-color: var(--bs-white-color);
-  height: 100vh;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .ep-banner-section .banner-title {
   margin-bottom: 30px;
