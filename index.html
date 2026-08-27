@@ -13,153 +13,113 @@
   <link rel="shortcut icon" type="image/x-icon" href="assets/img/main-images/AVZ Logo 1.png">
  
   <style>
-*/
 
+/* =====================================================
+   FLUID RESPONSIVE BANNER — scales on every screen
+   Uses clamp() so NO fixed breakpoint jumps
+   ===================================================== */
+
+/* Lock SVG: fluid width — fills the right column naturally.
+   38vw on large screens, more compact on mobile. */
 .lock-svg {
-  width: 100%;
-  max-width: 600px;
+  width: clamp(180px, 50vw, 700px);
   height: auto;
   display: block;
   transform: rotate(-5deg);
   margin: 0 auto;
 }
 
+/* On screens narrower than 992px the two columns stack */
+@media (max-width: 991.98px) {
+  .lock-svg {
+    width: clamp(140px, 50vw, 360px);
+  }
+}
+
+/* Tighten nav-link spacing at lg range so all items fit */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .navbar .nav-link {
+    font-size: 13px !important;
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+  }
+  .navbar .navbar-brand img {
+    max-height: 70px !important;
+    width: 120px !important;
+  }
+}
+
 .lock-animation {
   width: 100%;
-  max-width: 1000px;
   margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px 0;
+  padding: clamp(8px, 2vh, 20px) 0;
 }
 
+/* ── Banner section ──────────────────────────────────
+   Remove the rigid 100vh so short screens aren't squashed.
+   Use fluid padding that grows with the viewport.        */
+.ep-banner-section {
+  padding-top:    clamp(80px,  10vh, 140px) !important;
+  padding-bottom: clamp(30px,  5vh,  80px)  !important;
+  min-height: unset !important;
+  height: auto   !important;
+}
+
+/* Inner text padding also scales */
+.ep-banner-section .banner-text {
+  padding: clamp(10px, 2.5vh, 40px) 0 !important;
+}
+
+/* ── Banner heading: fluid font-size ─────────────────
+   Scales smoothly from 20px (320px screen) → 48px (1600px+) */
+.banner-title {
+  font-size: clamp(20px, 3.2vw, 48px) !important;
+  line-height: 1.2;
+}
+
+.ep-banner-section .banner-text h1 {
+  font-size: clamp(20px, 3.2vw, 48px) !important;
+  line-height: 1.2;
+}
+
+.ep-banner-section .banner-text p {
+  font-size: clamp(13px, 1.1vw, 16px);
+}
+
+/* ── Main heading (stats section) ───────────────────── */
+.main-heading {
+  font-size: clamp(24px, 3.5vw, 52px);
+  line-height: 1.2;
+  margin: 10px 0;
+}
+
+/* ── Container max-width for very large screens ─────── */
 @media (min-width: 1400px) {
-  .lock-svg {
-    max-width: 800px;
-  }
   .container {
     max-width: 1320px;
   }
-  .banner-title {
-    font-size: 48px !important;
-  }
-  .main-heading {
-    font-size: 52px;
-  }
 }
 
-
-@media (min-width: 1200px) {
-  .lock-svg {
-    max-width: 700px;
-  }
-}
-
-
-/* --- Laptop / medium screens (columns still side by side) --- */
-@media (max-width: 1199px) {
-  .lock-svg {
-    max-width: 360px;
-  }
+/* ── Below 992px: stacked layout adjustments ─────────── */
+@media (max-width: 991.98px) {
   .ep-banner-section {
-    padding-top: 100px !important;
-    padding-bottom: 40px !important;
-  }
-  .ep-banner-section .banner-text {
-    padding: 15px 0 !important;
-  }
-  .banner-title {
-    font-size: 30px !important;
-    line-height: 1.25;
-  }
-}
-
-@media (max-width: 1100px) {
-  .lock-svg {
-    max-width: 300px;
-  }
-}
-
-/* --- Below 992px: columns STACK, lock goes below text --- */
-@media (max-width: 991px) {
-  .lock-svg {
-    max-width: 220px;
-  }
-  .lock-animation {
-    padding: 5px 0;
-  }
-  .ep-banner-section {
-    height: auto !important;
-    min-height: unset !important;
-    padding-top: 90px !important;
-    padding-bottom: 30px !important;
     overflow: hidden !important;
   }
-  .ep-banner-section .banner-text {
-    padding: 10px 0 !important;
-  }
-  .banner-title {
-    font-size: 26px !important;
-    line-height: 1.2;
-  }
   .ep-banner-section .banner-text p {
-    font-size: 14px;
+    font-size: clamp(13px, 3.5vw, 15px);
     margin-bottom: 8px;
   }
 }
 
-@media (max-width: 767px) {
-  .lock-svg {
-    max-width: 180px;
-  }
-  .lock-animation {
-    padding: 5px 0;
-  }
-  .banner-title {
-    font-size: 24px !important;
-  }
-}
-
-@media (max-width: 575px) {
-  .lock-svg {
-    max-width: 140px;
-  }
-  .banner-title {
-    font-size: 20px !important;
-  }
-}
-
-/* --- Short-height laptop screens (e.g. 1366x768 laptops) --- */
-@media (max-height: 800px) and (min-width: 992px) {
-  .ep-banner-section {
-    height: auto !important;
-    min-height: unset !important;
-    padding-top: 90px !important;
-    padding-bottom: 30px !important;
-  }
-  .lock-svg {
-    max-width: 260px;
-  }
-  .banner-title {
-    font-size: 28px !important;
-  }
-  .ep-banner-section .banner-text {
-    padding: 10px 0 !important;
-  }
-}
-
-@media (max-height: 650px) and (min-width: 992px) {
-  .lock-svg {
-    max-width: 200px;
-  }
-  .banner-title {
-    font-size: 22px !important;
-  }
-  .ep-banner-section .banner-text p {
-    font-size: 13px;
-    margin-bottom: 6px;
-  }
+/* ── Highlight boxes ─────────────────────────────────── */
+.highlight-box {
+  font-size: clamp(11px, 1.1vw, 16px);
+  padding: clamp(8px, 1.2vh, 15px);
+  margin: clamp(6px, 1vh, 10px) 0;
+  border-radius: 8px;
 }
 
     .logos-slider .slide img {
@@ -277,7 +237,7 @@
       }
     }
 
-    .photoreal-lock { max-width: 370px; margin: 0 auto; display: block; }
+    .photoreal-lock { max-width: none; margin: 0 auto; display: block; }
     .shackle-anim { transition: transform 0.7s cubic-bezier(.68,-0.55,.27,1.55); transform-origin: 160px 70px; }
     .open .shackle-anim { transform: rotate(-35deg) translateY(-30px); }
 
@@ -646,7 +606,7 @@
   <!-- Preloader end -->
   <!-- Header section start -->
   <header class="ep-header-section w-100" id="sticky-header">
-    <nav class="navbar p-0 navbar-expand-xl d-none d-xl-flex">
+    <nav class="navbar p-0 navbar-expand-lg d-none d-lg-flex">
   <div class="container">
         <a class="navbar-brand" href="index.html">
   <img src="assets/img/main-images/AVZ Logo Final.png" alt="logo" style="max-height: 100px; width: 150px;">
@@ -721,7 +681,7 @@
       </div>
     </nav>
     <!-- mobile navbar part start -->
-    <div class="mobile-menu-area d-block d-xl-none">
+    <div class="mobile-menu-area d-block d-lg-none">
       <div class="container">
         <div class="mobile-topbar">
           <div class="d-flex justify-content-between align-items-center">
